@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Dynamic Primary Button */
+  .btn-primary-42 {
+    @apply w-[144px] h-[42px] text-white font-medium rounded-md flex items-center justify-center;
+  }
+
+  .btn-primary-60 {
+    @apply w-[144px] h-[60px] text-white font-medium rounded-md flex items-center justify-center;
+  }
+
+  .btn-primary-72 {
+    @apply w-[144px] h-[72px] text-white font-medium rounded-md flex items-center justify-center;
+  }
+}
+
+* {
+  transition: all 0.3s ease-in-out;
+}
