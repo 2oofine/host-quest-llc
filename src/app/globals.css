@@ -15,6 +15,12 @@
   .btn-primary-72 {
     @apply w-[144px] h-[72px] text-white font-medium rounded-md flex items-center justify-center;
   }
+
+  /* Footer Styles */
+  /* Title */
+  .footer-text {
+    @apply text-lg text-charcoalNavy;
+  }
 }
 
 * {
