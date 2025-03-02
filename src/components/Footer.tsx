@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="mt-16 mb-12 px-5 grid grid-cols-1 md:px-10 lg:px-[155px] sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-y-8">
         <div>
           <Link href={"/"} className="flex items-center">
-            <Image src={Logo} alt="Host Quest LLC Logo" className="max-w-full h-auto" />
+            <Image src={Logo} alt="Host Quest LLC Logo" width={138} className="max-w-full h-auto" />
           </Link>
           <div className="w-52 mt-8">
             To Connect Top Talent With the Right Opportunities, Empowering Businesses And Job Seekers For Long-Term
