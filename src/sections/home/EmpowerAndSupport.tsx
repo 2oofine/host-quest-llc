@@ -11,37 +11,37 @@ import LongCard from "@/components/LongCard";
 const EmpowerAndSupport = () => {
   return (
     <div className="relative overflow-hidden">
-      <div className="container mx-auto px-16 absolute inset-0 overflow-hidden ">
+      <div className="container mx-auto absolute inset-0 ">
         {/* Top Left */}
         <Image
           src={Dots}
           alt="Dots"
-          className="hidden xl:block absolute left-0 top-[2%] transform -translate-x-2/2 -translate-y-2/2"
+          className="block absolute left-0 top-[2%] transform -translate-x-1/2 -translate-y-2/2 2xl:-translate-x-0"
         />
         {/* Top Right */}
         <Image
           src={Dots}
           alt="Dots"
-          className="hidden xl:block absolute right-[5%] top-[45%] translate-x-1/2 -translate-y-1/3"
+          className="block absolute right-0 top-[44%] translate-x-1/2 -translate-y-1/3 2xl:-translate-x-0"
         />
         {/* Bottom Left */}
         <Image
           src={Dots}
           alt="Dots"
-          className="hidden xl:block absolute left-0 bottom-[40%] -translate-x-2/2 translate-y-1/3"
+          className="block absolute left-0 bottom-[40%] -translate-x-1/2 translate-y-1/3 2xl:-translate-x-0"
         />
         {/* Bottom Right */}
         <Image
           src={Dots}
           alt="Dots"
-          className="hidden xl:block absolute right-[5%] bottom-[5%] translate-x-1/2 translate-y-1/3"
+          className="block absolute right-0 bottom-[8%] translate-x-1/2 translate-y-1/3 2xl:-translate-x-0"
         />
       </div>
       <div className="container mx-auto px-5 relative my-8 lg:my-24 lg:space-y-28 space-y-10">
         <div className="container mx-auto flex flex-col-reverse lg:flex-row max-w-full w-[1132px] items-center justify-center gap-x-5">
           {/* Left Content */}
           <div className="text-center lg:text-left w-full lg:w-[555px]">
-            <h1 className="hidden lg:block text-[32px] lg:text-[40px] font-semibold">Empowering Job Seekers</h1>
+            <h1 className="hidden lg:block text-[32px] lg:text-[40px]">Empowering Job Seekers</h1>
             <p className="mt-6 text-[16px] lg:text-[18px]">
               We understand that finding the right job is more than just securing employment—it’s about building a
               meaningful career. Our services include:

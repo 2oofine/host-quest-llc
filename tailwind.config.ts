@@ -25,8 +25,9 @@ export default {
           light: "#F1F6F9", // Cultured
           accent: "#24AEDD", // Battery Charged Blue
         },
-        charcoalNavy: "#293241", //Charcoal Navy
-        aeroBlue: "#E0FBFC", //Aero Blue
+        charcoalNavy: "#293241", // Charcoal Navy
+        aeroBlue: "#E0FBFC", // Aero Blue
+        paleSkyBlue: "#98C1D9", // Pale Sky Blue
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
