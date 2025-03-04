@@ -4,7 +4,7 @@ import GlobalRecruitment from "../../../public/images/home/home-global-recruitme
 
 const GlobalRecruitmentPartner = () => {
   return (
-    <div className="relative overflow-hidden">
+    <section className="relative overflow-hidden">
       <div className="container mx-auto absolute inset-0 ">
         {/* Top Left */}
         <Image
@@ -23,7 +23,7 @@ const GlobalRecruitmentPartner = () => {
         <div className="container mx-auto flex flex-col lg:flex-row max-w-full w-[1132px] items-center justify-center gap-x-5">
           {/* Left Image */}
           <div className="relative w-full lg:w-[555px] h-96 lg:h-[636px] max-w-full flex items-center">
-            <div className="absolute inset-0 flex flex-col items-center text-center justify-center text-white text-[32px] bg-charcoalNavy/60 p-4 rounded-lg">
+            <div className="absolute inset-0 flex flex-col items-center text-center justify-center text-white text-[32px] bg-gradient-to-b from-[#6980A7]/0 to-[#293241]/100 p-4 rounded-lg">
               <h1 className="font-semibold lg:hidden">Your Global Recruitment Partner</h1>
             </div>
             <Image
@@ -46,13 +46,13 @@ const GlobalRecruitmentPartner = () => {
               deliver the right talent for every role—whether that’s unskilled labor or highly specialized
               professionals.
             </p>
-            <button className="lg:block mt-[34px] btn-primary-60 lg:w-[325px] bg-charcoalNavy text-[18px]">
+            <button className="lg:block mt-[34px] text-[16px] btn-primary-42 lg:w-[325px] bg-charcoalNavy lg:text-[18px]">
               See More
             </button>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

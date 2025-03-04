@@ -11,7 +11,7 @@ import Image from "next/image";
 
 const Discover = () => {
   return (
-    <div className="relative overflow-hidden">
+    <section className="relative overflow-hidden">
       <div className="mx-10 2xl:container 2xl:mx-auto bg-aeroBlue relative overflow-hidden z-10">
         <div className="container mx-auto absolute inset-0 -z-10">
           {/* Top Left */}
@@ -77,7 +77,13 @@ const Discover = () => {
               {/* Text Section */}
               <div className="px-5 py-6 lg:px-[41px] lg:py-10 flex flex-col flex-grow min-h-0 justify-center lg:justify-normal">
                 <div className="w-12 shrink-0 flex items-center justify-center">
-                  <Image src={Search} alt="Search" className="w-[50px] h-[50px] lg:w-[60px] lg:h-[60px]" />
+                  <Image
+                    src={Search}
+                    alt="Search"
+                    width={50}
+                    height={50}
+                    className="w-auto h-auto lg:w-[60px] lg:h-[60px]"
+                  />
                 </div>
                 <h2 className="font-semibold text-[22px] lg:text-[28px] mt-[16px] lg:mt-[24px] truncate">
                   Advance Your Career
@@ -95,7 +101,7 @@ const Discover = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

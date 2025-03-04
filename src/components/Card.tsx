@@ -18,7 +18,7 @@ const Card = (props: LongCardProps) => {
       </div>
       <div className="z-20 shrink-0 flex flex-col items-center justify-center lg:items-start">
         <div className="w-[50px]">
-          <Image src={icon} alt={iconName} className="w-[50px] h-[50px]" />
+          <Image src={icon} alt={iconName} width={50} height={50} className="w-[50px] h-[50px]" />
         </div>
 
         <div className="flex-1 text-center lg:text-left max-w-full w-[232px]">

@@ -10,7 +10,7 @@ import LongCard from "@/components/LongCard";
 
 const EmpowerAndSupport = () => {
   return (
-    <div className="relative overflow-hidden">
+    <section className="relative overflow-hidden">
       <div className="container mx-auto absolute inset-0 ">
         {/* Top Left */}
         <Image
@@ -41,7 +41,7 @@ const EmpowerAndSupport = () => {
         <div className="container mx-auto flex flex-col-reverse lg:flex-row max-w-full w-[1132px] items-center justify-center gap-x-5">
           {/* Left Content */}
           <div className="text-center lg:text-left w-full lg:w-[555px]">
-            <h1 className="hidden lg:block text-[32px] lg:text-[40px]">Empowering Job Seekers</h1>
+            <h1 className="hidden lg:block font-semibold text-[32px] lg:text-[40px]">Empowering Job Seekers</h1>
             <p className="mt-6 text-[16px] lg:text-[18px]">
               We understand that finding the right job is more than just securing employment—it’s about building a
               meaningful career. Our services include:
@@ -128,7 +128,7 @@ const EmpowerAndSupport = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

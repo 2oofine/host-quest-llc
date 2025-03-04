@@ -2,11 +2,12 @@ import Image from "next/image";
 import React from "react";
 import Logo from "../../public/logos/logo-hql-white.svg";
 import Link from "next/link";
+import MobileNav from "./MobileNav";
 
 const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 w-full z-50">
-      <div className="flex items-center justify-between px-5 my-[25px] md:mx-[40px] md:px-[20px] py-[15px] bg-black/30 backdrop-blur-[50px] md:rounded-[8px]">
+      <div className="flex items-center justify-between px-5 my-[25px] lg:mx-[40px] lg:px-[20px] py-[15px] bg-black/30 backdrop-blur-[50px] lg:rounded-[8px]">
         <Link href={"/"} className="flex items-center gap-1">
           <Image src={Logo} alt="Host Quest LLC Logo" className="w-[158px] max-w-full h-auto object-contain" />
         </Link>
@@ -36,6 +37,8 @@ const Navbar = () => {
             Contact Us
           </Link>
         </div>
+
+        <MobileNav />
       </div>
     </header>
   );

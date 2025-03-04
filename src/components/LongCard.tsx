@@ -5,14 +5,18 @@ type LongCardProps = {
   icon: string;
   iconName: string;
   text: string;
+  height?: number;
 };
 
 const LongCard = (props: LongCardProps) => {
-  const { icon, iconName, text } = props;
+  const { icon, iconName, text, height = 80 } = props;
   return (
-    <div className="max-w-full lg:w-[555px] h-auto lg:h-[80px] flex items-center gap-x-5 bg-white shadow-custom rounded-lg py-3 px-5 lg:px-7">
+    <div
+      className="max-w-full lg:w-[555px] h-auto flex items-center gap-x-5 bg-white shadow-custom rounded-lg py-3 px-5 lg:px-7"
+      style={{ height: `${height}px` }}
+    >
       <div className="w-12 shrink-0 flex items-center justify-center">
-        <Image src={icon} alt={iconName} className="w-10 h-10" />
+        <Image src={icon} alt={iconName} width={40} height={40} className="w-10 h-10" />
       </div>
 
       <div className="flex-1 text-center lg:text-left">

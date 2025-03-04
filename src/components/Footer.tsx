@@ -73,7 +73,7 @@ const Footer = () => {
 
       <hr className="bg-black/20 mx-4 md:mx-10 lg:mx-[40px]" />
 
-      <div className="text-center pt-[30px] pb-[44px]">
+      <div className="text-center pt-[30px] pb-[44px] mx-4">
         Host Quest LLC - Copyright &copy; {year}. All rights reserved.
       </div>
     </footer>

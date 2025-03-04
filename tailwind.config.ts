@@ -25,6 +25,7 @@ export default {
           light: "#F1F6F9", // Cultured
           accent: "#24AEDD", // Battery Charged Blue
         },
+        silver: "#C0C0C0", // Silver
         charcoalNavy: "#293241", // Charcoal Navy
         aeroBlue: "#E0FBFC", // Aero Blue
         paleSkyBlue: "#98C1D9", // Pale Sky Blue

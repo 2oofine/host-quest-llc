@@ -10,20 +10,20 @@ import Partnerships from "../../../public/icons/home/partnerships.svg";
 
 const WhyBusinessesTrustHQL = () => {
   return (
-    <div className="relative">
-      <div className="2xl:container mx-auto bg-aeroBlue relative overflow-hidden z-10">
+    <section className="relative overflow-hidden">
+      <div className="2xl:container mx-auto mt-[50px] bg-aeroBlue relative overflow-hidden z-10">
         <div className="2xl:container mx-auto absolute inset-0 -z-10">
           {/* Top Left */}
           <Image
             src={Arch5}
             alt="Arch"
-            className="block absolute left-[7.3%] bottom-[53%] -translate-x-1/2 translate-y-1/3"
+            className="block absolute left-[7.3%] lg:bottom-[53%] bottom-[82.5%] -translate-x-1/2 translate-y-1/3"
           />
           {/* Bottom Right */}
           <Image
             src={Arch6}
             alt="Arch"
-            className="block absolute right-[7.3%] top-[53%] translate-x-1/2 -translate-y-1/3"
+            className="block absolute right-[7.3%] lg:top-[53%] top-[82.5%] translate-x-1/2 -translate-y-1/3"
           />
         </div>
 
@@ -71,7 +71,7 @@ const WhyBusinessesTrustHQL = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
