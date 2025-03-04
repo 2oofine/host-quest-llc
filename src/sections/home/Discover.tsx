@@ -53,7 +53,7 @@ const Discover = () => {
             {/* Card 1 */}
             <div className="bg-white max-w-full w-[555px] h-[596px] flex flex-col">
               {/* Text Section */}
-              <div className="px-5 py-6 lg:px-[41px] lg:py-10 flex flex-col flex-grow min-h-0">
+              <div className="px-5 py-6 lg:px-[41px] lg:py-10 flex flex-col flex-grow min-h-0 justify-center lg:justify-normal">
                 <div className="w-12 shrink-0 flex items-center justify-center">
                   <Image src={Briefcase} alt="Briefcase" className="w-[50px] h-[50px] lg:w-[60px] lg:h-[60px]" />
                 </div>
@@ -75,7 +75,7 @@ const Discover = () => {
             {/* Card 2 */}
             <div className="bg-white max-w-full w-[555px] h-[596px] flex flex-col">
               {/* Text Section */}
-              <div className="px-5 py-6 lg:px-[41px] lg:py-10 flex flex-col flex-grow min-h-0">
+              <div className="px-5 py-6 lg:px-[41px] lg:py-10 flex flex-col flex-grow min-h-0 justify-center lg:justify-normal">
                 <div className="w-12 shrink-0 flex items-center justify-center">
                   <Image src={Search} alt="Search" className="w-[50px] h-[50px] lg:w-[60px] lg:h-[60px]" />
                 </div>
