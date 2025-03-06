@@ -1,4 +1,7 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
+import Link from "next/link";
 import StrongWorkforce from "../../../public/images/home/home-discover-strong-workforce.jpg";
 import AdvanceCareer from "../../../public/images/home/home-discover-advance-your-career.jpg";
 import Briefcase from "../../../public/icons/home/briefcase.svg";
@@ -8,10 +11,15 @@ import Arch2 from "../../../public/icons/home/arch2.svg";
 import Arch3 from "../../../public/icons/home/arch3.svg";
 import Arch4 from "../../../public/icons/home/arch4.svg";
 import Image from "next/image";
+import { SquareArrowOutUpRight } from "lucide-react";
+import { motion, useInView } from "framer-motion";
 
 const Discover = () => {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px 0px" });
+
   return (
-    <section className="relative overflow-hidden">
+    <section ref={sectionRef} className="relative overflow-hidden">
       <div className="mx-10 2xl:container 2xl:mx-auto bg-aeroBlue relative overflow-hidden z-10">
         <div className="container mx-auto absolute inset-0 -z-10">
           {/* Top Left */}
@@ -41,17 +49,27 @@ const Discover = () => {
         </div>
         <div className="container mx-auto pt-[50px] pb-[101px]">
           {/* Title */}
-          <div className="text-center">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-center"
+          >
             <h1 className="text-[30px] md:text-[40px] font-semibold leading-none">Discover How We Can Help You</h1>
             <p className="mt-[9px]">
               Explore our specialized services below and let Host Quest LLC help you achieve your workforce and career
               goals.
             </p>
-          </div>
+          </motion.div>
 
           <div className="flex flex-col lg:flex-row items-center justify-center gap-5 mt-[40px]">
             {/* Card 1 */}
-            <div className="bg-white max-w-full w-[555px] h-[596px] flex flex-col">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0 }}
+              className="bg-white max-w-full w-[555px] h-[596px] flex flex-col"
+            >
               {/* Text Section */}
               <div className="px-5 py-6 lg:px-[41px] lg:py-10 flex flex-col flex-grow min-h-0 justify-center lg:justify-normal">
                 <div className="w-12 shrink-0 flex items-center justify-center">
@@ -67,13 +85,35 @@ const Discover = () => {
               </div>
 
               {/* Image Section */}
-              <div className="relative w-full h-[305px] flex items-center overflow-hidden">
-                <Image src={StrongWorkforce} alt="Build a Strong Workforce" className="w-full h-full object-cover" />
-              </div>
-            </div>
+              <Link
+                href="/" // add url here.
+                className="relative w-full h-[305px] flex items-center overflow-hidden group"
+              >
+                {/* Image */}
+                <Image
+                  src={StrongWorkforce}
+                  alt="Build A Strong Workforce"
+                  className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
+                />
+
+                {/* Overlay (Dim Background) */}
+                <div className="absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-center justify-center">
+                  {/* See More Button */}
+                  <div className="flex items-center justify-center gap-x-1 px-4 py-2 text-white rounded-lg transition-transform duration-300 hover:scale-105">
+                    See More
+                    <SquareArrowOutUpRight size={20} />
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
 
             {/* Card 2 */}
-            <div className="bg-white max-w-full w-[555px] h-[596px] flex flex-col">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+              className="bg-white max-w-full w-[555px] h-[596px] flex flex-col"
+            >
               {/* Text Section */}
               <div className="px-5 py-6 lg:px-[41px] lg:py-10 flex flex-col flex-grow min-h-0 justify-center lg:justify-normal">
                 <div className="w-12 shrink-0 flex items-center justify-center">
@@ -94,10 +134,27 @@ const Discover = () => {
               </div>
 
               {/* Image Section */}
-              <div className="relative w-full h-[305px] flex items-center overflow-hidden">
-                <Image src={AdvanceCareer} alt="Advance Your Career" className="w-full h-full object-cover" />
-              </div>
-            </div>
+              <Link
+                href="/" // add url here.
+                className="relative w-full h-[305px] flex items-center overflow-hidden group"
+              >
+                {/* Image */}
+                <Image
+                  src={AdvanceCareer}
+                  alt="Advance Your Career"
+                  className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
+                />
+
+                {/* Overlay (Dim Background) */}
+                <div className="absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-center justify-center">
+                  {/* See More Button */}
+                  <div className="flex items-center justify-center gap-x-1 px-4 py-2 text-white rounded-lg transition-transform duration-300 hover:scale-105">
+                    See More
+                    <SquareArrowOutUpRight size={20} />
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
           </div>
         </div>
       </div>

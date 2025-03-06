@@ -14,26 +14,29 @@ const Navbar = () => {
 
         <nav className="hidden lg:flex justify-center" aria-label="Main Navigation">
           <ul className="hidden lg:flex items-center space-x-8 md:font-medium text-white">
-            <li>
+            <li className="hover:bg-slate-400 hover:rounded-3xl hover:py-1 hover:px-3">
               <Link href={"/"}>Home</Link>
             </li>
-            <li>
+            <li className="hover:bg-slate-400 hover:rounded-3xl hover:py-1 hover:px-3">
               <Link href={"/services"}>Services</Link>
             </li>
-            <li>
+            <li className="hover:bg-slate-400 hover:rounded-3xl hover:py-1 hover:px-3">
               <Link href={"/about"}>About</Link>
             </li>
-            <li>
+            <li className="hover:bg-slate-400 hover:rounded-3xl hover:py-1 hover:px-3">
               <Link href={"/job-seekers"}>Job Seekers</Link>
             </li>
-            <li>
+            <li className="hover:bg-slate-400 hover:rounded-3xl hover:py-1 hover:px-3">
               <Link href={"/employers"}>Employers</Link>
             </li>
           </ul>
         </nav>
 
         <div className="hidden lg:flex h-full items-center">
-          <Link className="btn-primary-42 w-[163px] text-black bg-aeroBlue" href={"/contact"}>
+          <Link
+            className="hover:bg-[#78B0B2] hover:text-white btn-primary-42 w-[163px] text-black bg-aeroBlue"
+            href={"/contact"}
+          >
             Contact Us
           </Link>
         </div>
