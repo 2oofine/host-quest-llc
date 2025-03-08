@@ -50,8 +50,8 @@ const EmpowerAndSupport = () => {
         <motion.img
           src={"/icons/home/dots.svg"}
           alt="Dots"
-          initial={{ x: -100, opacity: 0 }}
-          animate={isInView ? { x: 0, opacity: 1 } : {}}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="block absolute left-0 top-[2%] transform -translate-x-1/2 -translate-y-2/2 2xl:-translate-x-0"
         />
@@ -59,8 +59,8 @@ const EmpowerAndSupport = () => {
         <motion.img
           src={"/icons/home/dots.svg"}
           alt="Dots"
-          initial={{ x: 100, opacity: 0 }}
-          animate={isInView ? { x: 0, opacity: 1 } : {}}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="block absolute right-0 top-[44%] translate-x-1/2 -translate-y-1/3 2xl:-translate-x-0"
         />
@@ -68,8 +68,8 @@ const EmpowerAndSupport = () => {
         <motion.img
           src={"/icons/home/dots.svg"}
           alt="Dots"
-          initial={{ x: -100, opacity: 0 }}
-          animate={isInView ? { x: 0, opacity: 1 } : {}}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           className="block absolute left-0 bottom-[40%] -translate-x-1/2 translate-y-1/3 2xl:-translate-x-0"
         />
@@ -77,8 +77,8 @@ const EmpowerAndSupport = () => {
         <motion.img
           src={"/icons/home/dots.svg"}
           alt="Dots"
-          initial={{ x: 100, opacity: 0 }}
-          animate={isInView ? { x: 0, opacity: 1 } : {}}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           className="block absolute right-0 bottom-[8%] translate-x-1/2 translate-y-1/3 2xl:-translate-x-0"
         />
