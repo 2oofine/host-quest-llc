@@ -1,19 +1,15 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
-import React, { useRef } from "react";
+import Connection from "../../../public/icons/home/connection.svg";
+import Globe from "../../../public/icons/home/globe.svg";
+import ListBoard from "../../../public/icons/home/listboard.svg";
 import Empower from "../../../public/images/home/home-empowering-job-seekers.jpg";
 import Support from "../../../public/images/home/home-supporting-businesses-with-top-talent.jpg";
 import LongCard from "../../components/LongCard";
-import Globe from "../../../public/icons/home/globe.svg";
-import ListBoard from "../../../public/icons/home/listboard.svg";
-import Connection from "../../../public/icons/home/connection.svg";
 
 const EmpowerAndSupport = () => {
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px 0px" });
-
   // Variants for the first section (left to center)
   const listVariantsLeft = {
     hidden: { opacity: 0, x: -100 },
@@ -43,7 +39,7 @@ const EmpowerAndSupport = () => {
   };
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden">
+    <section className="relative overflow-hidden">
       {/* Animated Dots */}
       <div className="container mx-auto absolute inset-0">
         {/* Top Left */}
@@ -51,7 +47,9 @@ const EmpowerAndSupport = () => {
           src={"/icons/home/dots.svg"}
           alt="Dots"
           initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
+          // animate={isInView ? { opacity: 1 } : {}}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="block absolute left-0 top-[2%] transform -translate-x-1/2 -translate-y-2/2 2xl:-translate-x-0"
         />
@@ -60,7 +58,9 @@ const EmpowerAndSupport = () => {
           src={"/icons/home/dots.svg"}
           alt="Dots"
           initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
+          // animate={isInView ? { opacity: 1 } : {}}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="block absolute right-0 top-[44%] translate-x-1/2 -translate-y-1/3 2xl:-translate-x-0"
         />
@@ -69,7 +69,9 @@ const EmpowerAndSupport = () => {
           src={"/icons/home/dots.svg"}
           alt="Dots"
           initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
+          // animate={isInView ? { opacity: 1 } : {}}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           className="block absolute left-0 bottom-[40%] -translate-x-1/2 translate-y-1/3 2xl:-translate-x-0"
         />
@@ -78,7 +80,9 @@ const EmpowerAndSupport = () => {
           src={"/icons/home/dots.svg"}
           alt="Dots"
           initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
+          // animate={isInView ? { opacity: 1 } : {}}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           className="block absolute right-0 bottom-[8%] translate-x-1/2 translate-y-1/3 2xl:-translate-x-0"
         />
@@ -88,7 +92,9 @@ const EmpowerAndSupport = () => {
         {/* Section 1: Empowering Job Seekers */}
         <motion.div
           initial={{ x: -100, opacity: 0 }}
-          animate={isInView ? { x: 0, opacity: 1 } : {}}
+          // animate={isInView ? { x: 0, opacity: 1 } : {}}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="container mx-auto flex flex-col-reverse lg:flex-row max-w-full w-[1132px] items-center justify-center gap-x-5"
         >
@@ -122,7 +128,9 @@ const EmpowerAndSupport = () => {
                   className="w-full"
                   variants={listVariantsLeft}
                   initial="hidden"
-                  animate={isInView ? "visible" : "hidden"}
+                  // animate={isInView ? "visible" : "hidden"}
+                  whileInView={"visible"}
+                  viewport={{ once: true }}
                   custom={index}
                   whileHover={{ scale: 1.05 }}
                 >
@@ -134,21 +142,29 @@ const EmpowerAndSupport = () => {
 
           {/* Right Image */}
           <motion.div
-            className="relative w-full lg:w-[555px] h-auto lg:h-[555px] max-w-full flex items-center"
-            whileHover={{ rotateZ: 2 }}
-            transition={{ duration: 0.2 }} // Quick transition
+            className="relative w-full lg:w-[555px] h-auto lg:h-[555px] max-w-full flex items-center group overflow-hidden rounded-lg"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
             <h1 className="absolute inset-0 flex items-center text-center justify-center text-white text-[32px] font-semibold bg-charcoalNavy/60 p-4 rounded-lg lg:hidden">
               Empowering Job Seekers
             </h1>
-            <Image src={Empower} alt="Empowering Job Seekers" className="w-full h-full object-cover rounded-lg" />
+            <Image
+              src={Empower}
+              alt="Empowering Job Seekers"
+              className="w-full h-full object-cover rounded-lg transform transition-transform duration-300 group-hover:scale-110"
+            />
           </motion.div>
         </motion.div>
 
         {/* Section 2: Supporting Businesses */}
         <motion.div
           initial={{ x: 100, opacity: 0 }}
-          animate={isInView ? { x: 0, opacity: 1 } : {}}
+          // animate={isInView ? { x: 0, opacity: 1 } : {}}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           className="container mx-auto flex flex-col-reverse lg:flex-row-reverse max-w-full w-[1132px] items-center justify-center gap-x-5"
         >
@@ -184,7 +200,9 @@ const EmpowerAndSupport = () => {
                   className="w-full"
                   variants={listVariantsRight}
                   initial="hidden"
-                  animate={isInView ? "visible" : "hidden"}
+                  // animate={isInView ? "visible" : "hidden"}
+                  whileInView={"visible"}
+                  viewport={{ once: true }}
                   custom={index} // Delay index
                   whileHover={{ scale: 1.05 }}
                 >
@@ -196,9 +214,11 @@ const EmpowerAndSupport = () => {
 
           {/* Left Image */}
           <motion.div
-            className="relative w-full lg:w-[555px] h-auto lg:h-[555px] max-w-full flex items-center"
-            whileHover={{ rotateZ: -2 }}
-            transition={{ duration: 0.2 }} // Quick transition
+            className="relative w-full lg:w-[555px] h-auto lg:h-[555px] max-w-full flex items-center group overflow-hidden rounded-lg"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
             <h1 className="absolute inset-0 flex items-center text-center justify-center text-white text-[32px] font-semibold bg-charcoalNavy/60 p-4 rounded-lg lg:hidden">
               Supporting Businesses With Top Talent
@@ -206,7 +226,7 @@ const EmpowerAndSupport = () => {
             <Image
               src={Support}
               alt="Supporting Businesses With Top Talent"
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full h-full object-cover rounded-lg transform transition-transform duration-300 group-hover:scale-110"
             />
           </motion.div>
         </motion.div>

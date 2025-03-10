@@ -1,19 +1,15 @@
 "use client";
+import LongCard from "@/components/LongCard";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Cog from "../../../public/icons/home/cog.svg";
-import PuzzlePiece from "../../../public/icons/home/puzzlepiece.svg";
-import LocationPin from "../../../public/icons/home/locationpin.svg";
 import Fingerprint from "../../../public/icons/home/fingerprint.svg";
+import LocationPin from "../../../public/icons/home/locationpin.svg";
+import PuzzlePiece from "../../../public/icons/home/puzzlepiece.svg";
 import Trophy from "../../../public/icons/home/trophy.svg";
 import WSUA from "../../../public/images/home/home-what-sets-us-apart.jpg";
-import LongCard from "@/components/LongCard";
-import { motion, useInView } from "framer-motion";
-import React, { useRef } from "react";
 
 const WhatSetsUsApart = () => {
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px 0px" });
-
   const cardData = [
     { icon: Cog, iconName: "Cog", text: "Comprehensive talent acquisition strategies tailored to business needs." },
     {
@@ -39,7 +35,7 @@ const WhatSetsUsApart = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden">
+    <section className="relative overflow-hidden">
       {/* Decorative Dots */}
       <div className="container mx-auto absolute inset-0">
         {["top-[6%]", "bottom-[38%]", "top-[81%]"].map((position, index) => (
@@ -48,7 +44,9 @@ const WhatSetsUsApart = () => {
             src={"/icons/home/dots.svg"}
             alt="Dots"
             initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
+            // animate={isInView ? { opacity: 1 } : {}}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className={`block absolute ${
               index === 1 ? "right-0 translate-x-1/2 translate-y-1/3" : "left-0"
@@ -62,14 +60,18 @@ const WhatSetsUsApart = () => {
           {/* Left Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            // animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: "easeOut" }}
             className="relative w-full lg:w-[555px] h-96 lg:h-[661px] max-w-full flex items-center"
           >
             <div className="absolute inset-0 flex flex-col items-center text-center justify-center text-white text-[32px] bg-gradient-to-b from-[#6980A7]/0 to-[#293241]/100 p-4 rounded-lg">
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                // animate={isInView ? { opacity: 1, y: 0 } : {}}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="font-semibold lg:hidden"
               >
@@ -87,7 +89,9 @@ const WhatSetsUsApart = () => {
           <div className="flex flex-col items-center justify-center lg:items-start text-center lg:text-left w-full lg:w-[555px]">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              // animate={isInView ? { opacity: 1, y: 0 } : {}}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="hidden lg:block text-[32px] lg:text-[40px] font-semibold"
             >
@@ -96,7 +100,9 @@ const WhatSetsUsApart = () => {
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              // animate={isInView ? { opacity: 1, y: 0 } : {}}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.7, ease: "easeOut" }}
               className="lg:block mt-[31px] lg:mt-0 text-[16px] lg:text-[18px]"
             >
@@ -110,7 +116,8 @@ const WhatSetsUsApart = () => {
                 <motion.li
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  // animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.2 }}
                   viewport={{ once: true }}
                   className="w-full"

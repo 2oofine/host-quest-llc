@@ -1,11 +1,10 @@
 "use client";
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
 import Card from "@/components/Card";
+import { motion } from "framer-motion";
 import Blocks from "../../../public/icons/home/blocks.svg";
-import Star from "../../../public/icons/home/star.svg";
 import Graph from "../../../public/icons/home/graph.svg";
 import Partnerships from "../../../public/icons/home/partnerships.svg";
+import Star from "../../../public/icons/home/star.svg";
 
 const cards = [
   {
@@ -35,11 +34,8 @@ const cards = [
 ];
 
 const WhyBusinessesTrustHQL = () => {
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px 0px" });
-
   return (
-    <section ref={sectionRef} className="relative overflow-hidden">
+    <section className="relative overflow-hidden">
       <div className="2xl:container mx-auto mt-[50px] bg-aeroBlue relative overflow-hidden z-10">
         {/* Background Elements */}
         <div className="2xl:container mx-auto absolute inset-0 -z-10">
@@ -48,7 +44,9 @@ const WhyBusinessesTrustHQL = () => {
             src={"/icons/home/arch5.svg"}
             alt="Arch"
             initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
+            // animate={isInView ? { opacity: 1 } : {}}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 1, ease: "easeOut" }}
             className="block absolute left-[7.3%] lg:bottom-[53%] bottom-[82.5%] -translate-x-1/2 translate-y-1/3"
           />
@@ -57,7 +55,9 @@ const WhyBusinessesTrustHQL = () => {
             src={"/icons/home/arch6.svg"}
             alt="Arch"
             initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
+            // animate={isInView ? { opacity: 1 } : {}}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
             className="block absolute right-[7.3%] lg:top-[53%] top-[82.5%] translate-x-1/2 -translate-y-1/3"
           />
@@ -68,16 +68,18 @@ const WhyBusinessesTrustHQL = () => {
           <div className="text-center mx-5">
             <motion.h1
               initial={{ opacity: 0, x: -50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              // animate={isInView ? { opacity: 1, x: 0 } : {}}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="text-[30px] md:text-[40px] font-semibold leading-none"
+              className="text-[30px] md:text-[40px] font-semibold"
             >
               Why Businesses Trust Host Quest LLC
             </motion.h1>
             <motion.p
               initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : {}}
+              // animate={isInView ? { opacity: 1 } : {}}
+              whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
               className="mt-[3px]"
@@ -89,7 +91,8 @@ const WhyBusinessesTrustHQL = () => {
           {/* Cards Grid Animation */}
           <motion.ul
             initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            // animate={isInView ? { opacity: 1, y: 0 } : {}}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", staggerChildren: 0.2 }}
             viewport={{ once: true }}
             className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-5 mt-[46px]"
@@ -98,7 +101,8 @@ const WhyBusinessesTrustHQL = () => {
               <motion.li
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                // animate={isInView ? { opacity: 1, y: 0 } : {}}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 whileTap={{ scale: 0.95 }}

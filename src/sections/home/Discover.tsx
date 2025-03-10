@@ -1,25 +1,21 @@
 "use client";
 
-import React, { useRef } from "react";
+import { motion } from "framer-motion";
+import { SquareArrowOutUpRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-import StrongWorkforce from "../../../public/images/home/home-discover-strong-workforce.jpg";
-import AdvanceCareer from "../../../public/images/home/home-discover-advance-your-career.jpg";
-import Briefcase from "../../../public/icons/home/briefcase.svg";
-import Search from "../../../public/icons/home/search.svg";
 import Arch1 from "../../../public/icons/home/arch1.svg";
 import Arch2 from "../../../public/icons/home/arch2.svg";
 import Arch3 from "../../../public/icons/home/arch3.svg";
 import Arch4 from "../../../public/icons/home/arch4.svg";
-import Image from "next/image";
-import { SquareArrowOutUpRight } from "lucide-react";
-import { motion, useInView } from "framer-motion";
+import Briefcase from "../../../public/icons/home/briefcase.svg";
+import Search from "../../../public/icons/home/search.svg";
+import AdvanceCareer from "../../../public/images/home/home-discover-advance-your-career.jpg";
+import StrongWorkforce from "../../../public/images/home/home-discover-strong-workforce.jpg";
 
 const Discover = () => {
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px 0px" });
-
   return (
-    <section ref={sectionRef} className="relative overflow-hidden">
+    <section className="relative overflow-hidden">
       <div className="mx-10 2xl:container 2xl:mx-auto bg-aeroBlue relative overflow-hidden z-10">
         <div className="container mx-auto absolute inset-0 -z-10">
           {/* Top Left */}
@@ -51,7 +47,9 @@ const Discover = () => {
           {/* Title */}
           <motion.div
             initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            // animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center"
           >
@@ -66,8 +64,10 @@ const Discover = () => {
             {/* Card 1 */}
             <motion.div
               initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0 }}
+              // animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
               className="bg-white max-w-full w-[555px] h-[596px] flex flex-col"
             >
               {/* Text Section */}
@@ -110,8 +110,10 @@ const Discover = () => {
             {/* Card 2 */}
             <motion.div
               initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+              // animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
               className="bg-white max-w-full w-[555px] h-[596px] flex flex-col"
             >
               {/* Text Section */}

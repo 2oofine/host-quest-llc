@@ -11,6 +11,7 @@ export default {
     extend: {
       boxShadow: {
         custom: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Custom shadow
+        "custom-dark": "0px 6px 14px rgba(0, 0, 0, 0.3)", // Darker shadow when selected
       },
       fontFamily: {
         sans: ["var(--font-poppins)", "sans-serif"], // Default font

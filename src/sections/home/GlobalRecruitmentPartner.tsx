@@ -1,23 +1,20 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 import GlobalRecruitment from "../../../public/images/home/home-global-recruitment-partner.jpg";
-import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
 const GlobalRecruitmentPartner = () => {
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px 0px" });
-
   return (
-    <section ref={sectionRef} className="relative overflow-hidden">
+    <section className="relative overflow-hidden">
       <div className="container mx-auto absolute inset-0 ">
         {/* Top Left */}
         <motion.img
           src={"/icons/home/dots.svg"}
           alt="Dots"
           initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
+          // animate={isInView ? { opacity: 1 } : {}}
           whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="block absolute left-0 top-[8.5%] transform -translate-x-1/2 -translate-y-2/2 2xl:-translate-x-0"
         />
@@ -26,7 +23,9 @@ const GlobalRecruitmentPartner = () => {
           src={"/icons/home/dots.svg"}
           alt="Dots"
           initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
+          // animate={isInView ? { opacity: 1 } : {}}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="block absolute right-0 bottom-[10.5%] translate-x-1/2 translate-y-1/3 2xl:-translate-x-0"
         />
@@ -36,9 +35,10 @@ const GlobalRecruitmentPartner = () => {
           {/* Left Image */}
           <motion.div
             initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.2, ease: "easeOut", delay: 0 }}
-            whileHover={{ rotateZ: -2 }}
+            // animate={isInView ? { opacity: 1 } : {}}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.2, ease: "easeOut", delay: 0.4 }}
             className="relative w-full lg:w-[555px] h-96 lg:h-[636px] max-w-full flex items-center"
           >
             <div className="absolute inset-0 flex flex-col items-center text-center justify-center text-white text-[32px] bg-gradient-to-b from-[#6980A7]/0 to-[#293241]/100 p-4 rounded-lg">
@@ -54,8 +54,10 @@ const GlobalRecruitmentPartner = () => {
           {/* Right Content */}
           <motion.div
             initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+            // animate={isInView ? { opacity: 1 } : {}}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
             className="flex flex-col items-center justify-center lg:items-start text-center lg:text-left w-full lg:w-[555px]"
           >
             <h1 className="hidden lg:block text-[32px] lg:text-[40px] font-semibold">

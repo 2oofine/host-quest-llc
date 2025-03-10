@@ -62,11 +62,17 @@ const Footer = () => {
           <p className="footer-text font-semibold">Office Information</p>
 
           <ul className="footer-text mt-[15px] space-y-3">
-            <li>+123 456 789 000</li>
             <li>
+              <span className="font-semibold">Name: </span> Nader Assad
+            </li>
+            <li>
+              <span className="font-semibold">WhatsApp: </span>+1 714 326 4146
+            </li>
+            <li>
+              <span className="font-semibold">Email: </span>
               <a href="mailto:info@hostquestllc.com">info@hostquestllc.com</a>
             </li>
-            <li>XYZ Hilton Street, Los Angeles, Californa</li>
+            <li>Los Angeles, Californa</li>
           </ul>
         </div>
       </div>
