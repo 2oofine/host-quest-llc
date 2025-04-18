@@ -1,5 +1,5 @@
 "use client";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import FiveStars from "../../../public/icons/home/5-stars.svg";
 import Euresa from "../../../public/images/home/euresa.png";
@@ -164,30 +164,28 @@ const Testimonials = () => {
 
             {/* Right Side: Display Selected Review */}
 
-            <AnimatePresence mode="wait">
-              {testimonials.map((testimonials, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.2 }}
-                  className="relative overflow-hidden text-primary-dark  flex flex-col items-center lg:items-start bg-white shadow-custom p-9"
-                >
-                  {/* <Image
+            {testimonials.map((testimonials, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.2 }}
+                className="relative overflow-hidden text-primary-dark  flex flex-col items-center lg:items-start bg-white shadow-custom p-9"
+              >
+                {/* <Image
                     src={testimonials.avatar}
                     alt={testimonials.avatarName}
                     className="lg:hidden lg:w-[50px] lg:h-[50px] w-[100px] h-[100px]"
                   /> */}
-                  {/* <h2 className="mt-3 font-semibold lg:hidden">{testimonials.name}</h2> */}
+                {/* <h2 className="mt-3 font-semibold lg:hidden">{testimonials.name}</h2> */}
 
-                  <Image src={FiveStars} alt="FiveStars" width={195} height={30} className="mt-4 lg:mt-0" />
-                  <p className="text-xl text-charcoalNavy text-left mt-2">{testimonials.name}</p>
-                  <div className="mt-4 lg:mt-[30px] text-lg h-[200px] overflow-y-auto pr-4">{testimonials.review}</div>
-                  <p className="text-base text-black/50 text-right ml-auto mt-auto italic">{testimonials.reviewDate}</p>
-                </motion.div>
-              ))}
-            </AnimatePresence>
+                <Image src={FiveStars} alt="FiveStars" width={195} height={30} className="mt-4 lg:mt-0" />
+                <p className="text-xl text-charcoalNavy text-left mt-2">{testimonials.name}</p>
+                <div className="mt-4 lg:mt-[30px] text-lg h-[200px] overflow-y-auto pr-4">{testimonials.review}</div>
+                <p className="text-base text-black/50 text-right ml-auto mt-auto italic">{testimonials.reviewDate}</p>
+              </motion.div>
+            ))}
 
             {/* <div className="lg:hidden flex absolute w-full justify-between top-1/2 -translate-y-1/2 px-4">
                 <button onClick={handlePrev} className="bg-white p-2 rounded-full shadow-md hover:scale-110 transition">
