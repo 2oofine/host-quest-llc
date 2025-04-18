@@ -164,6 +164,7 @@ const Testimonials = () => {
 
             {/* Right Side: Display Selected Review */}
 
+            {/* <AnimatePresence mode="wait"> */}
             {testimonials.map((testimonials, index) => (
               <motion.div
                 key={index}
@@ -186,6 +187,7 @@ const Testimonials = () => {
                 <p className="text-base text-black/50 text-right ml-auto mt-auto italic">{testimonials.reviewDate}</p>
               </motion.div>
             ))}
+            {/* </AnimatePresence> */}
 
             {/* <div className="lg:hidden flex absolute w-full justify-between top-1/2 -translate-y-1/2 px-4">
                 <button onClick={handlePrev} className="bg-white p-2 rounded-full shadow-md hover:scale-110 transition">
