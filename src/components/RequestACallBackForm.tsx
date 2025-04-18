@@ -50,31 +50,31 @@ const RequestACallBackForm = () => {
           ref={fullNameRef}
           placeholder="Full Name *"
           required
-          className={`max-w-full w-[555px] max-h-full h-[60px] p-[18px] rounded-xl bg-white text-black placeholder-silver font-light`}
+          className={`max-w-full w-[555px] max-h-full h-[60px] p-[18px]  bg-white text-black placeholder-silver font-light`}
         />
         <input
           type="email"
           ref={emailRef}
           placeholder="Email Address *"
           required
-          className={`max-w-full w-[555px] max-h-full h-[60px] p-[18px] rounded-xl bg-white text-black  placeholder-silver font-light`}
+          className={`max-w-full w-[555px] max-h-full h-[60px] p-[18px]  bg-white text-black  placeholder-silver font-light`}
         />
         <input
           type="tel"
           ref={phoneRef}
-          placeholder="Phone Number"
-          className={`max-w-full w-[555px] max-h-full h-[60px] p-[18px] rounded-xl bg-white text-black placeholder-silver font-light`}
+          placeholder="Phone Number (Optional)"
+          className={`max-w-full w-[555px] max-h-full h-[60px] p-[18px] bg-white text-black placeholder-silver font-light`}
         />
         <textarea
           ref={messageRef}
           placeholder="Message"
           rows={10}
-          className={`max-w-full w-[555px] p-[18px] rounded-xl bg-white text-black placeholder-silver font-light`}
+          className={`max-w-full w-[555px] p-[18px]  bg-white text-black placeholder-silver font-light`}
         ></textarea>
 
         <button
           type="submit"
-          className="btn-primary-42 w-full lg:w-[250px]  hover:bg-slate-300 bg-white text-black rounded-xl"
+          className="btn-primary-42 w-full rounded-none lg:w-[250px] hover:bg-slate-300 bg-white text-black "
         >
           Send Request
         </button>

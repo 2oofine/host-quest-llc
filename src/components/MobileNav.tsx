@@ -91,7 +91,7 @@ const MobileNav = () => {
               <li>
                 <Link
                   href={"/contact"}
-                  className="btn-primary-42 w-full text-black bg-aeroBlue text-center block py-2 rounded"
+                  className="btn-primary-42 w-full text-black bg-aeroBlue text-center flex items-center justify-center py-2 rounded "
                   onClick={toggleMobileNav}
                 >
                   Contact Us

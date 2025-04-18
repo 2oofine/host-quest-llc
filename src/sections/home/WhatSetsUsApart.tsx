@@ -2,42 +2,42 @@
 import LongCard from "@/components/LongCard";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Cog from "../../../public/icons/home/cog.svg";
-import Fingerprint from "../../../public/icons/home/fingerprint.svg";
-import LocationPin from "../../../public/icons/home/locationpin.svg";
-import PuzzlePiece from "../../../public/icons/home/puzzlepiece.svg";
-import Trophy from "../../../public/icons/home/trophy.svg";
+import Globe from "../../../public/icons/home/globe.svg";
+import Medal from "../../../public/icons/home/medal.svg";
+import RadarMonitoringTrack from "../../../public/icons/home/radar-monitoring-track.svg";
+import Star from "../../../public/icons/home/star.svg";
+import Tools from "../../../public/icons/home/tools.svg";
 import WSUA from "../../../public/images/home/home-what-sets-us-apart.jpg";
 
 const WhatSetsUsApart = () => {
   const cardData = [
-    { icon: Cog, iconName: "Cog", text: "Comprehensive talent acquisition strategies tailored to business needs." },
+    { icon: Star, iconName: "Star", text: "Industry Expertise" },
     {
-      icon: PuzzlePiece,
-      iconName: "PuzzlePiece",
-      text: "A diverse and qualified talent pool, ranging from entry-level to highly specialized professionals.",
+      icon: Tools,
+      iconName: "Tools",
+      text: "Tailored Workforce Solutions",
     },
     {
-      icon: LocationPin,
-      iconName: "LocationPin",
-      text: "Efficient recruitment solutions that save time, reduce costs, and ensure the perfect hire.",
+      icon: Globe,
+      iconName: "Globe",
+      text: "Global Reach, Local Expertise",
     },
     {
-      icon: Fingerprint,
-      iconName: "Fingerprint",
-      text: "Innovative technology-driven hiring solutions that streamline recruitment processes.",
+      icon: RadarMonitoringTrack,
+      iconName: "RadarMonitoringTrack",
+      text: "Technology-Driven Recruitment",
     },
     {
-      icon: Trophy,
-      iconName: "Trophy",
-      text: "Commitment to excellence with a proven track record in talent placement.",
+      icon: Medal,
+      iconName: "Medal",
+      text: "Commitment to Excellence",
     },
   ];
 
   return (
     <section className="relative overflow-hidden">
       {/* Decorative Dots */}
-      <div className="container mx-auto absolute inset-0">
+      {/* <div className="container mx-auto absolute inset-0">
         {["top-[6%]", "bottom-[38%]", "top-[81%]"].map((position, index) => (
           <motion.img
             key={index}
@@ -53,7 +53,7 @@ const WhatSetsUsApart = () => {
             } ${position} transform -translate-x-1/2 -translate-y-2/2 2xl:-translate-x-0`}
           />
         ))}
-      </div>
+      </div> */}
 
       <div className="container mx-auto px-5 relative my-8 lg:mt-24 lg:mb-44 lg:space-y-28 space-y-10">
         <div className="container mx-auto flex flex-col lg:flex-row max-w-full w-[1132px] items-end justify-center gap-x-5">
@@ -75,7 +75,7 @@ const WhatSetsUsApart = () => {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="font-semibold lg:hidden"
               >
-                What Sets Us Apart?
+                What <span className="text-primary-light">Sets Us Apart?</span>
               </motion.h1>
             </div>
             <Image
@@ -95,7 +95,7 @@ const WhatSetsUsApart = () => {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="hidden lg:block text-[32px] lg:text-[40px] font-semibold"
             >
-              What Sets Us Apart?
+              What <span className="text-primary-light">Sets Us Apart?</span>
             </motion.h1>
 
             <motion.p

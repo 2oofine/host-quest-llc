@@ -1,32 +1,32 @@
 "use client";
 import Card from "@/components/Card";
 import { motion } from "framer-motion";
-import Blocks from "../../../public/icons/home/blocks.svg";
-import Graph from "../../../public/icons/home/graph.svg";
-import Partnerships from "../../../public/icons/home/partnerships.svg";
-import Star from "../../../public/icons/home/star.svg";
+import Equality from "../../../public/icons/home/equality.svg";
+import HeartPartnerHandshake from "../../../public/icons/home/heart-partner-handshake.svg";
+import IndustryAlt from "../../../public/icons/home/industry-alt.svg";
+import Quality from "../../../public/icons/home/quality.svg";
 
 const cards = [
   {
-    icon: Blocks,
+    icon: IndustryAlt,
     title: "Industry-Specific Expertise",
     iconName: "Blocks",
     text: "We understand the challenges of hiring across multiple industries.",
   },
   {
-    icon: Star,
+    icon: Quality,
     title: "Quality-Driven Approach",
     iconName: "Star",
     text: "Every candidate is carefully vetted to ensure the right fit.",
   },
   {
-    icon: Graph,
+    icon: Equality,
     title: "Scalable Solutions",
     iconName: "Graph",
     text: "From small teams to large-scale workforce expansion, we adapt to your needs.",
   },
   {
-    icon: Partnerships,
+    icon: HeartPartnerHandshake,
     title: "Long-Term Partnerships",
     iconName: "Partnerships",
     text: "We go beyond hiring; we help you build sustainable teams for growth.",
@@ -36,10 +36,10 @@ const cards = [
 const WhyBusinessesTrustHQL = () => {
   return (
     <section className="relative overflow-hidden">
-      <div className="2xl:container mx-auto mt-[50px] bg-aeroBlue relative overflow-hidden z-10">
+      <div className="mt-[50px] w-full bg-secondary-light relative overflow-hidden z-10">
         {/* Background Elements */}
-        <div className="2xl:container mx-auto absolute inset-0 -z-10">
-          {/* Top Left Arch */}
+        {/* <div className="2xl:container mx-auto absolute inset-0 -z-10">
+         
           <motion.img
             src={"/icons/home/arch5.svg"}
             alt="Arch"
@@ -50,7 +50,6 @@ const WhyBusinessesTrustHQL = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             className="block absolute left-[7.3%] lg:bottom-[53%] bottom-[82.5%] -translate-x-1/2 translate-y-1/3"
           />
-          {/* Bottom Right Arch */}
           <motion.img
             src={"/icons/home/arch6.svg"}
             alt="Arch"
@@ -61,11 +60,11 @@ const WhyBusinessesTrustHQL = () => {
             transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
             className="block absolute right-[7.3%] lg:top-[53%] top-[82.5%] translate-x-1/2 -translate-y-1/3"
           />
-        </div>
+        </div> */}
 
         <div className="mx-10 pt-[46px] pb-[101px]">
           {/* Heading Animation */}
-          <div className="text-center mx-5">
+          <div className="text-center mx-5 text-primary-dark">
             <motion.h1
               initial={{ opacity: 0, x: -50 }}
               // animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -95,7 +94,7 @@ const WhyBusinessesTrustHQL = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", staggerChildren: 0.2 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-5 mt-[46px]"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-y-8 lg:gap-x-5 mt-[46px] place-items-center"
           >
             {cards.map((card, index) => (
               <motion.li
