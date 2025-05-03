@@ -74,7 +74,7 @@ const MobileNav = () => {
                 </Link>
               </li>
               <li>
-                <Link href={"/about"} onClick={toggleMobileNav}>
+                <Link href={"/about-us"} onClick={toggleMobileNav}>
                   About
                 </Link>
               </li>
@@ -90,7 +90,7 @@ const MobileNav = () => {
               </li>
               <li>
                 <Link
-                  href={"/contact"}
+                  href={"/contact-us"}
                   className="btn-primary-42 w-full text-black bg-aeroBlue text-center flex items-center justify-center py-2 rounded "
                   onClick={toggleMobileNav}
                 >

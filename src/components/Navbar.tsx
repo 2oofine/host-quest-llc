@@ -22,7 +22,7 @@ const Navbar = () => {
               <Link href={"/services"}>Services</Link>
             </li>
             <li className="hover:bg-slate-400 hover:rounded-3xl hover:py-1 hover:px-3">
-              <Link href={"/about"}>About</Link>
+              <Link href={"/about-us"}>About Us</Link>
             </li>
             <li className="hover:bg-slate-400 hover:rounded-3xl hover:py-1 hover:px-3">
               <Link href={"/job-seekers"}>Job Seekers</Link>
@@ -33,7 +33,7 @@ const Navbar = () => {
             <li className="hidden lg:flex h-full items-center">
               <Link
                 className="hover:bg-[#78B0B2] hover:text-white btn-primary-42 w-[163px] text-black bg-aeroBlue"
-                href={"/contact"}
+                href={"/contact-us"}
               >
                 Contact Us
               </Link>

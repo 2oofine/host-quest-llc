@@ -1,0 +1,17 @@
+import SubSectionHero from "@/components/SubSectionHero";
+import HeroBanner from "../../../../public/images/home/home-empowering-job-seekers.jpg";
+
+const JobSeekersPage = () => {
+  return (
+    <>
+      <SubSectionHero
+        heroImage={HeroBanner}
+        title="Advance Your Career with Confidence"
+        subtitle="Explore life-changing career opportunities across the globe with personalized support, skill-building programs, and expert guidance to help you land the right job and thrive in today’s competitive job market."
+        imagePosition="50% 20%"
+      />
+    </>
+  );
+};
+
+export default JobSeekersPage;
