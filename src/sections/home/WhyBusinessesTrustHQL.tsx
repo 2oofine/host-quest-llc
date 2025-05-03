@@ -35,8 +35,8 @@ const cards = [
 
 const WhyBusinessesTrustHQL = () => {
   return (
-    <section className="relative overflow-hidden">
-      <div className="mt-[50px] w-full bg-secondary-light relative overflow-hidden z-10">
+    <section className="relative overflow-hidden bg-secondary-light">
+      <div className="container mx-auto mt-[50px] w-full  relative overflow-hidden z-10">
         {/* Background Elements */}
         {/* <div className="2xl:container mx-auto absolute inset-0 -z-10">
          

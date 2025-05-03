@@ -11,7 +11,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer className="text-secondary-light bg-primary-dark">
-      <div className=" pt-16 pb-12 px-5 grid grid-cols-1 md:px-10 lg:px-[155px] sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-24 ">
+      <div className="container mx-auto pt-16 pb-12 px-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-24 ">
         <div className="flex flex-col items-center md:block">
           <Link href={"/"} className="flex items-center">
             <Image src={Logo} alt="Host Quest LLC Logo" className="w-[138px] max-w-full h-auto" />

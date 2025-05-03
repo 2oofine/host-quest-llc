@@ -10,7 +10,7 @@ const RequestACallBack = () => {
 
       <div className="absolute inset-0 bg-primary-dark/50 z-10" />
 
-      <div className="relative container 2xl:mx-auto lg:mx-[155px] z-20 text-white pt-8 flex flex-col items-center text-center lg:items-start lg:text-left px-5">
+      <div className="relative container 2xl:mx-auto lg:mx-[155px] z-20 text-white pt-2 lg:pt-8 flex flex-col items-center text-center lg:items-start lg:text-left px-5">
         <div className="max-w-full w-[550px]">
           <h1 className="text-[40px] font-semibold">
             Request A <span className="text-primary-light">Call Back</span>
