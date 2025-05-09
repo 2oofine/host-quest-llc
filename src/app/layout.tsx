@@ -16,7 +16,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    template: `%s | MayIssue`,
+    template: `%s | Host Quest LLC`,
     default: APP_NAME,
   },
   description: APP_DESCRIPTION,

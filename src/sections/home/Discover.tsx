@@ -12,7 +12,7 @@ import StrongWorkforce from "../../../public/images/home/home-discover-strong-wo
 const Discover = () => {
   return (
     <section className="relative overflow-hidden">
-      <div className="w-full bg-secondary-light relative overflow-hidden z-10">
+      <div className="w-full bg-secondary-light z-10">
         {/*<div className="container mx-auto absolute inset-0 -z-10">
         
           <Image

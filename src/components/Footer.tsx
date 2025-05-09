@@ -104,7 +104,12 @@ const Footer = () => {
         </div>
       </div>
 
-      <hr className="bg-black/20 mx-4 md:mx-10 lg:mx-[40px]" />
+      <hr
+        className="w-[150%] -ml-[25%] h-[1px] border-0"
+        style={{
+          background: "linear-gradient(to right, transparent, #07C6D0, transparent)", // replace #D1D5DB with your `text-primary-light`
+        }}
+      />
 
       <div className="text-center pt-[30px] pb-[44px] mx-4">
         Host Quest LLC - Copyright &copy; {year}. All rights reserved.

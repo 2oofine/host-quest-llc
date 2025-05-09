@@ -1,5 +1,10 @@
 import SubSectionHero from "@/components/SubSectionHero";
 import HeroBanner from "../../../../public/images/home/home-empowering-job-seekers.jpg";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Jobseekers",
+};
 
 const JobSeekersPage = () => {
   return (

@@ -9,7 +9,12 @@ import Star from "../../../public/icons/home/star.svg";
 import Tools from "../../../public/icons/home/tools.svg";
 import WSUA from "../../../public/images/home/home-what-sets-us-apart.jpg";
 
-const WhatSetsUsApart = () => {
+interface Props {
+  light?: boolean;
+}
+const WhatSetsUsApart = (props: Props) => {
+  const { light = false } = props;
+
   const cardData = [
     { icon: Star, iconName: "Star", text: "Industry Expertise" },
     {
@@ -35,7 +40,7 @@ const WhatSetsUsApart = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden">
+    <section className={`relative overflow-hidden ${light ? "bg-secondary-light" : "bg-primary-dark"}`}>
       {/* Decorative Dots */}
       {/* <div className="container mx-auto absolute inset-0">
         {["top-[6%]", "bottom-[38%]", "top-[81%]"].map((position, index) => (
@@ -86,7 +91,11 @@ const WhatSetsUsApart = () => {
           </motion.div>
 
           {/* Right Content */}
-          <div className="flex flex-col items-center justify-center lg:items-start text-center lg:text-left w-full lg:w-[555px]">
+          <div
+            className={`flex flex-col items-center justify-center lg:items-start text-center lg:text-left w-full lg:w-[555px] ${
+              light ? "text-primary-dark" : "text-white"
+            }`}
+          >
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               // animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -123,7 +132,7 @@ const WhatSetsUsApart = () => {
                   className="w-full"
                 >
                   <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0 }}>
-                    <LongCard icon={card.icon} iconName={card.iconName} text={card.text} height={86} />
+                    <LongCard icon={card.icon} iconName={card.iconName} text={card.text} height={86} light={light} />
                   </motion.div>
                 </motion.li>
               ))}

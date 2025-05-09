@@ -6,13 +6,16 @@ type InfoCardProps = {
   iconName: string;
   text: string;
   height?: number;
+  light?: boolean;
 };
 
 const InfoCard = (props: InfoCardProps) => {
-  const { icon, iconName, text, height = 215 } = props;
+  const { icon, iconName, text, height = 215, light = true } = props;
   return (
     <div
-      className="w-full bg-white shadow-custom py-3 px-5 lg:px-7 flex items-center justify-center"
+      className={`w-full ${
+        light ? "bg-white" : "bg-primary-dark"
+      } shadow-custom py-3 px-5 lg:px-7 flex items-center justify-center`}
       style={{ height: `${height}px` }}
     >
       <div className="flex flex-col items-start justify-center space-y-4">
@@ -21,7 +24,9 @@ const InfoCard = (props: InfoCardProps) => {
         </div>
 
         <div className="text-center lg:text-left">
-          <p className="text-primary-dark text-[14px] lg:text-[16px] font-light">{text}</p>
+          <p className={`${light ? "text-primary-dark" : "text-white"} text-[14px] lg:text-[16px] font-light`}>
+            {text}
+          </p>
         </div>
       </div>
     </div>

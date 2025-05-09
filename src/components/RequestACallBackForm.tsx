@@ -2,7 +2,11 @@
 "use client";
 import React, { useRef, useState } from "react";
 
-const RequestACallBackForm = () => {
+interface Props {
+  isFromContactUs?: boolean;
+}
+const RequestACallBackForm = (props: Props) => {
+  const { isFromContactUs = false } = props;
   const fullNameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const phoneRef = useRef<HTMLInputElement>(null);
@@ -44,42 +48,57 @@ const RequestACallBackForm = () => {
   return (
     <>
       {/* Form */}
-      <form className="mt-6 space-y-[22px]" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          ref={fullNameRef}
-          placeholder="Full Name *"
-          required
-          className={`max-w-full w-[555px] max-h-full h-[60px] p-[18px]  bg-white text-black placeholder-silver font-light`}
-        />
-        <input
-          type="email"
-          ref={emailRef}
-          placeholder="Email Address *"
-          required
-          className={`max-w-full w-[555px] max-h-full h-[60px] p-[18px]  bg-white text-black  placeholder-silver font-light`}
-        />
-        <input
-          type="tel"
-          ref={phoneRef}
-          placeholder="Phone Number (Optional)"
-          className={`max-w-full w-[555px] max-h-full h-[60px] p-[18px] bg-white text-black placeholder-silver font-light`}
-        />
-        <textarea
-          ref={messageRef}
-          placeholder="Message"
-          rows={10}
-          className={`max-w-full w-[555px] p-[18px]  bg-white text-black placeholder-silver font-light`}
-        ></textarea>
+      <form className="mt-6 space-y-[22px] flex flex-col h-full" onSubmit={handleSubmit}>
+        <div className="flex flex-col space-y-[22px]">
+          {" "}
+          {/* Added flex-grow here */}
+          <input
+            type="text"
+            ref={fullNameRef}
+            placeholder="Full Name *"
+            required
+            className={`max-w-full ${
+              isFromContactUs ? "w-full" : "w-[555px]"
+            } h-[60px] p-[18px] bg-white text-black placeholder-silver font-light`}
+          />
+          <input
+            type="email"
+            ref={emailRef}
+            placeholder="Email Address *"
+            required
+            className={`max-w-full ${
+              isFromContactUs ? "w-full" : "w-[555px]"
+            } h-[60px] p-[18px] bg-white text-black placeholder-silver font-light`}
+          />
+          <input
+            type="tel"
+            ref={phoneRef}
+            placeholder="Phone Number (Optional)"
+            className={`max-w-full ${
+              isFromContactUs ? "w-full" : "w-[555px]"
+            } h-[60px] p-[18px] bg-white text-black placeholder-silver font-light`}
+          />
+          <textarea
+            ref={messageRef}
+            placeholder="Message"
+            rows={isFromContactUs ? 15 : 10}
+            className={`max-w-full ${
+              isFromContactUs ? "w-full" : "w-[555px]"
+            } p-[18px] bg-white text-black placeholder-silver font-light`}
+          />
+        </div>
 
-        <button
-          type="submit"
-          className="btn-primary-42 w-full rounded-none lg:w-[250px] hover:bg-slate-300 bg-white text-black "
-        >
-          Send Request
-        </button>
-
-        {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
+        <div className="mt-auto">
+          <button
+            type="submit"
+            className={`btn-primary-42 w-full rounded-none ${
+              isFromContactUs ? "hover:bg-primary-light/70 bg-primary-light" : "hover:bg-slate-300 bg-white"
+            }  text-black`}
+          >
+            {isFromContactUs ? "Send Now" : "Send Request"}
+          </button>
+          {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
+        </div>
       </form>
     </>
   );
