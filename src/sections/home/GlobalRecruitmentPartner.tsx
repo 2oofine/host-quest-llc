@@ -71,9 +71,9 @@ const GlobalRecruitmentPartner = () => {
               deliver the right talent for every role—whether that’s unskilled labor or highly specialized
               professionals.
             </p>
-            <button className="hover:bg-[#78B0B2] hover:text-secondary-light transition duration-300 lg:block mt-[34px] text-[16px] btn-primary-42 lg:w-[325px] bg-secondary-light lg:text-[18px] text-primary-dark">
+            {/* <button className="hover:bg-[#78B0B2] hover:text-secondary-light transition duration-300 lg:block mt-[34px] text-[16px] btn-primary-42 lg:w-[325px] bg-secondary-light lg:text-[18px] text-primary-dark">
               See More
-            </button>
+            </button> */}
           </motion.div>
         </div>
       </div>

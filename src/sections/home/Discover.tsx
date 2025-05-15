@@ -7,7 +7,7 @@ import Link from "next/link";
 import Briefcase from "../../../public/icons/home/briefcase.svg";
 import Search from "../../../public/icons/home/search.svg";
 import AdvanceCareer from "../../../public/images/home/home-discover-advance-your-career.jpg";
-import StrongWorkforce from "../../../public/images/home/home-discover-strong-workforce.jpg";
+import StrongWorkforce from "../../../public/images/employers/employersbanner.png";
 
 const Discover = () => {
   return (
@@ -79,7 +79,7 @@ const Discover = () => {
 
               {/* Image Section */}
               <Link
-                href="/" // add url here.
+                href="/job-seekers" // add url here.
                 className="relative w-full h-[305px] flex items-center overflow-hidden group"
               >
                 {/* Image */}
@@ -129,10 +129,7 @@ const Discover = () => {
               </div>
 
               {/* Image Section */}
-              <Link
-                href="/" // add url here.
-                className="relative w-full h-[305px] flex items-center overflow-hidden group"
-              >
+              <Link href="/employers" className="relative w-full h-[305px] flex items-center overflow-hidden group">
                 {/* Image */}
                 <Image
                   src={AdvanceCareer}
