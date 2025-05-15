@@ -1,5 +1,5 @@
 import SubSectionHero from "@/components/SubSectionHero";
-import HeroBanner from "../../../../public/images/home/home-supporting-businesses-with-top-talent.jpg";
+import HeroBanner from "../../../../public/images/contact-us/hero-banner.png";
 import type { Metadata } from "next";
 import GetInTouch from "@/sections/contact-us/GetInTouch";
 import WhyBusinessesTrustHQL from "@/sections/home/WhyBusinessesTrustHQL";
