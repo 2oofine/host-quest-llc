@@ -32,7 +32,7 @@ type LayoutProps = {
 
 export default function RootLayout({ children }: LayoutProps) {
   return (
-    <html lang="en" className={poppins.variable}>
+    <html lang="en" className={poppins.variable} suppressHydrationWarning>
       <body className="bg-primary-dark text-secondary-light">
         <Navbar />
         <main className="min-h-screen">{children}</main>

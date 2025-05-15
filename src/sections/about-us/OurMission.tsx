@@ -41,7 +41,7 @@ const OurMission = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", staggerChildren: 0.2 }}
               viewport={{ once: true }}
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-[46px] place-items-center"
+              className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-[46px] place-items-center max-w-full w-[1920px]"
             >
               {OurMissionData.items.map((item, index) => (
                 <motion.li

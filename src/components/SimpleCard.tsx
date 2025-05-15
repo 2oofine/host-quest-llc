@@ -1,4 +1,4 @@
-import { CardItem } from "@/types/Card";
+import { CardItem } from "@/types/card";
 import React from "react";
 
 interface Props {

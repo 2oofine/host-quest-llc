@@ -61,7 +61,12 @@ const MobileNav = () => {
         >
           <div className="flex items-center justify-between mb-8">
             <Link href={"/"} className="flex items-center gap-1" onClick={toggleMobileNav}>
-              <Image src={Logo} alt="Host Quest LLC Logo" className="w-[158px] max-w-full h-auto object-contain" />
+              <Image
+                src={Logo}
+                alt="Host Quest LLC Logo"
+                priority
+                className="w-[158px] max-w-full h-auto object-contain"
+              />
             </Link>
             <button
               onClick={toggleMobileNav}

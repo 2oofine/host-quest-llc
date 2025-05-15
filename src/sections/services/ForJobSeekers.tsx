@@ -40,6 +40,7 @@ const ForJobSeekers = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.7 }}
               viewport={{ once: true }}
+              className="container mx-auto flex flex-col-reverse lg:flex-row-reverse max-w-full w-[1920px] items-center justify-end gap-x-5"
             >
               <FiveCardLayout light={false} cardItems={ForJobSeekersData} />
             </motion.div>

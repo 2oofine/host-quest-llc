@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="container mx-auto pt-16 pb-12 px-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-24 ">
         <div className="flex flex-col items-center md:block">
           <Link href={"/"} className="flex items-center">
-            <Image src={Logo} alt="Host Quest LLC Logo" className="w-[138px] max-w-full h-auto" />
+            <Image src={Logo} alt="Host Quest LLC Logo" priority className="w-[138px] max-w-full h-auto" />
           </Link>
           <div className="w-full text-center mt-4 md:text-left md:mt-8">
             To Connect Top Talent With the Right Opportunities, Empowering Businesses And Job Seekers For Long-Term

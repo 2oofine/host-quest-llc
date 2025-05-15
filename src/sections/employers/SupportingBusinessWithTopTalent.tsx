@@ -33,7 +33,7 @@ const SupportingBusinessWithTopTalent = () => {
               viewport={{ once: true }}
               className="text-[30px] md:text-[40px] font-semibold"
             >
-              What We <span className="text-primary-light">Offer Employers</span>
+              Support Businesses With <span className="text-primary-light">Top Talent</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0 }}
@@ -43,7 +43,8 @@ const SupportingBusinessWithTopTalent = () => {
               viewport={{ once: true }}
               className="mt-[3px] text-primary-dark"
             >
-              We help businesses streamline their hiring processes and find the right talent for their teams.
+              The strength of any business lies in its people. We help organizations identify, attract, and retain top
+              talent through:
             </motion.p>
           </div>
 

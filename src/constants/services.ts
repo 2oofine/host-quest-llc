@@ -1,4 +1,4 @@
-import { CardItems } from "@/types/Card";
+import { CardItems } from "@/types/card";
 
 export const ForJobSeekersData: CardItems = {
   items: [
