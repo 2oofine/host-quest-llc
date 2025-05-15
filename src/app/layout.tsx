@@ -16,7 +16,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    template: `%s | MayIssue`,
+    template: `%s | Host Quest LLC`,
     default: APP_NAME,
   },
   description: APP_DESCRIPTION,
@@ -32,8 +32,8 @@ type LayoutProps = {
 
 export default function RootLayout({ children }: LayoutProps) {
   return (
-    <html lang="en" className={poppins.variable}>
-      <body className="bg-gray-50 text-gray-900">
+    <html lang="en" className={poppins.variable} suppressHydrationWarning>
+      <body className="bg-primary-dark text-secondary-light">
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />

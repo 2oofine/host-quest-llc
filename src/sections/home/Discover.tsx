@@ -4,45 +4,38 @@ import { motion } from "framer-motion";
 import { SquareArrowOutUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import Arch1 from "../../../public/icons/home/arch1.svg";
-import Arch2 from "../../../public/icons/home/arch2.svg";
-import Arch3 from "../../../public/icons/home/arch3.svg";
-import Arch4 from "../../../public/icons/home/arch4.svg";
 import Briefcase from "../../../public/icons/home/briefcase.svg";
 import Search from "../../../public/icons/home/search.svg";
 import AdvanceCareer from "../../../public/images/home/home-discover-advance-your-career.jpg";
-import StrongWorkforce from "../../../public/images/home/home-discover-strong-workforce.jpg";
+import StrongWorkforce from "../../../public/images/employers/employersbanner.png";
 
 const Discover = () => {
   return (
     <section className="relative overflow-hidden">
-      <div className="mx-10 2xl:container 2xl:mx-auto bg-aeroBlue relative overflow-hidden z-10">
-        <div className="container mx-auto absolute inset-0 -z-10">
-          {/* Top Left */}
+      <div className="w-full bg-secondary-light z-10">
+        {/*<div className="container mx-auto absolute inset-0 -z-10">
+        
           <Image
             src={Arch1}
             alt="Arch"
             className="block absolute left-[6.6%] 2xl:left-[8.2%] top-0 transform -translate-x-1/2 -translate-y-2/2"
           />
-          {/* Top Right */}
           <Image
             src={Arch2}
             alt="Arch"
             className="block absolute right-[3.2%] top-[15%] translate-x-1/2 -translate-y-1/3"
           />
-          {/* Bottom Left */}
           <Image
             src={Arch3}
             alt="Arch"
             className="block absolute left-[3.2%] bottom-[23%] -translate-x-1/2 translate-y-1/3"
           />
-          {/* Bottom Right */}
           <Image
             src={Arch4}
             alt="Arch"
             className="block absolute right-[6.6%] 2xl:right-[8.2%] bottom-[4.8%] translate-x-1/2 translate-y-1/3"
           />
-        </div>
+        </div></section> */}
         <div className="container mx-auto pt-[50px] pb-[101px]">
           {/* Title */}
           <motion.div
@@ -51,7 +44,7 @@ const Discover = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center"
+            className="text-center text-primary-dark"
           >
             <h1 className="text-[30px] md:text-[40px] font-semibold leading-none">Discover How We Can Help You</h1>
             <p className="mt-[9px]">
@@ -68,14 +61,14 @@ const Discover = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-              className="bg-white max-w-full w-[555px] h-[596px] flex flex-col"
+              className="bg-primary-dark max-w-full w-[555px] h-[596px] flex flex-col"
             >
               {/* Text Section */}
               <div className="px-5 py-6 lg:px-[41px] lg:py-10 flex flex-col flex-grow min-h-0 justify-center lg:justify-normal">
                 <div className="w-12 shrink-0 flex items-center justify-center">
-                  <Image src={Briefcase} alt="Briefcase" className="w-[50px] h-[50px] lg:w-[60px] lg:h-[60px]" />
+                  <Image src={Briefcase} alt="Briefcase" className="w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] " />
                 </div>
-                <h2 className="font-semibold text-[22px] lg:text-[28px] mt-[16px] lg:mt-[24px] truncate">
+                <h2 className="font-semibold text-[22px] lg:text-[28px] mt-[16px] lg:mt-[24px] truncate text-primary-light">
                   Build a Strong Workforce
                 </h2>
                 <p className="mt-1 text-[18px] lg:text-[18px] overflow-hidden text-ellipsis">
@@ -86,7 +79,7 @@ const Discover = () => {
 
               {/* Image Section */}
               <Link
-                href="/" // add url here.
+                href="/job-seekers" // add url here.
                 className="relative w-full h-[305px] flex items-center overflow-hidden group"
               >
                 {/* Image */}
@@ -114,7 +107,7 @@ const Discover = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
-              className="bg-white max-w-full w-[555px] h-[596px] flex flex-col"
+              className="bg-primary-dark max-w-full w-[555px] h-[596px] flex flex-col"
             >
               {/* Text Section */}
               <div className="px-5 py-6 lg:px-[41px] lg:py-10 flex flex-col flex-grow min-h-0 justify-center lg:justify-normal">
@@ -127,7 +120,7 @@ const Discover = () => {
                     className="w-auto h-auto lg:w-[60px] lg:h-[60px]"
                   />
                 </div>
-                <h2 className="font-semibold text-[22px] lg:text-[28px] mt-[16px] lg:mt-[24px] truncate">
+                <h2 className="font-semibold text-[22px] lg:text-[28px] mt-[16px] lg:mt-[24px] truncate text-primary-light">
                   Advance Your Career
                 </h2>
                 <p className="mt-1 text-[18px] lg:text-[18px] overflow-hidden text-ellipsis">
@@ -136,10 +129,7 @@ const Discover = () => {
               </div>
 
               {/* Image Section */}
-              <Link
-                href="/" // add url here.
-                className="relative w-full h-[305px] flex items-center overflow-hidden group"
-              >
+              <Link href="/employers" className="relative w-full h-[305px] flex items-center overflow-hidden group">
                 {/* Image */}
                 <Image
                   src={AdvanceCareer}

@@ -18,11 +18,10 @@ export default {
       },
       colors: {
         primary: {
-          DEFAULT: "#051F42", // Oxford Blue
+          dark: "#080808", // black
           light: "#07C6D0", // Turquoise Blue
         },
         secondary: {
-          DEFAULT: "#000000", // Black
           light: "#F1F6F9", // Cultured
           accent: "#24AEDD", // Battery Charged Blue
         },

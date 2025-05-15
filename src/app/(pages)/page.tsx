@@ -11,9 +11,9 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <EmpowerAndSupport />
-      <Discover />
       <GlobalRecruitmentPartner />
+      <Discover />
+      <EmpowerAndSupport />
       <WhyBusinessesTrustHQL />
       <WhatSetsUsApart />
       <Testimonials />
