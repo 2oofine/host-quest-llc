@@ -7,7 +7,6 @@ import { CountryData, State } from "@/types/countryState";
 import { JobType, WorkSetup } from "@/types/jobs";
 import { currencyToSign } from "@/utils/helpers";
 import { ChevronRight } from "lucide-react";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import ReactSelect from "react-select";
 
@@ -25,6 +24,8 @@ const JobPostings = () => {
   const [searchState, setSearchState] = useState<SearchState>();
   const [isClient, setIsClient] = useState(false);
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedJob, setSelectedJob] = useState<(typeof jobs)[number] | null>(null);
 
   // Detect client side render
   useEffect(() => {
@@ -97,6 +98,8 @@ const JobPostings = () => {
   useEffect(() => {
     setCurrentPage(1);
   }, [searchState]);
+
+  //TODO: create a onsubmit handler for form modal for applying a job
 
   return (
     <section className="relative overflow-hidden">
@@ -210,12 +213,15 @@ const JobPostings = () => {
                           </div>
                         </div>
                       </div>
-                      <Link
-                        href="#"
+                      <button
+                        onClick={() => {
+                          setSelectedJob(job);
+                          setIsModalOpen(true);
+                        }}
                         className="flex items-center justify-center w-12 h-12 rounded-full bg-primary-light hover:bg-primary-dark transition-colors"
                       >
                         <ChevronRight className="w-8 h-8 text-primary-dark hover:text-white" />
-                      </Link>
+                      </button>
                     </div>
                   );
                 })
@@ -274,6 +280,80 @@ const JobPostings = () => {
           </div>
         </div>
       </div>
+
+      {isModalOpen && selectedJob && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white rounded-2xl w-full max-w-2xl p-6 shadow-lg relative">
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-black"
+            >
+              ✕
+            </button>
+
+            <h2 className="text-2xl text-primary-dark font-bold mb-2">{selectedJob.title}</h2>
+            <p className="italic text-sm text-gray-600 mb-4">{selectedJob.state.name}</p>
+
+            <dl className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6 mb-6 text-sm">
+              <div>
+                <dt className="font-semibold text-primary-dark">Job Type</dt>
+                <dd className="text-gray-700">{selectedJob.jobType}</dd>
+              </div>
+              <div>
+                <dt className="font-semibold text-primary-dark">Work Setup</dt>
+                <dd className="text-gray-700">{selectedJob.workSetup}</dd>
+              </div>
+              <div>
+                <dt className="font-semibold text-primary-dark">Salary</dt>
+                <dd className="text-gray-700">
+                  {currencyToSign(selectedJob.currency)}
+                  {selectedJob.salaryMin} - {currencyToSign(selectedJob.currency)}
+                  {selectedJob.salaryMax} / {selectedJob.periodicity}
+                </dd>
+              </div>
+            </dl>
+
+            <p className="mb-6 text-primary-dark">{selectedJob.description || "No description available."}</p>
+
+            <form className="flex flex-col gap-4">
+              <label className="block">
+                <span className="text-sm font-medium text-gray-700">Your Name</span>
+                <input
+                  type="text"
+                  className="mt-1 px-2 py-2 block w-full rounded-md text-primary-dark border border-gray-300 shadow-sm focus:border-primary-light focus:ring focus:ring-primary-light/50"
+                  required
+                />
+              </label>
+
+              <label className="block">
+                <span className="text-sm font-medium text-gray-700">Email</span>
+                <input
+                  type="email"
+                  className="mt-1 px-2 py-2 text-primary-dark block w-full rounded-md border border-gray-300 shadow-sm focus:border-primary-light focus:ring focus:ring-primary-light/50"
+                  required
+                />
+              </label>
+
+              <label className="block">
+                <span className="text-sm font-medium text-gray-700">Upload Resume</span>
+                <input
+                  type="file"
+                  accept=".pdf,.doc,.docx"
+                  className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-primary-light file:text-primary-dark hover:file:bg-primary-dark hover:file:text-white"
+                  required
+                />
+              </label>
+
+              <button
+                type="submit"
+                className="mt-4 bg-primary-light hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md transition-colors"
+              >
+                Submit Application
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
