@@ -95,10 +95,10 @@ const Footer = () => {
             </li>
             <li>
               <span className="font-semibold text-primary-light">Email: </span>
-              <a href="mailto:info@hostquestllc.com">info@hostquestllc.com</a>
+              <a href="mailto:info@hostquestllc.com">nader.adel92@gmail.com</a>
             </li>
             <li>
-              <span className="font-semibold text-primary-light">Address: </span>Los Angeles, Californa
+              <span className="font-semibold text-primary-light">Address: </span>310 Jefferson St, Placentia, CA 92870
             </li>
           </ul>
         </div>
