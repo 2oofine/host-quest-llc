@@ -105,9 +105,9 @@ const Footer = () => {
       </div>
 
       <hr
-        className="w-[150%] -ml-[25%] h-[1px] border-0"
+        className="w-full h-[1px] border-0"
         style={{
-          background: "linear-gradient(to right, transparent, #07C6D0, transparent)", // replace #D1D5DB with your `text-primary-light`
+          background: "linear-gradient(to right, transparent, #07C6D0, transparent)",
         }}
       />
 
