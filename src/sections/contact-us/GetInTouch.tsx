@@ -11,10 +11,12 @@ import Marker from "../../../public/icons/contact-us/marker.svg";
 import { CompanyInfo } from "@/constants/company-info";
 import RequestACallBackForm from "@/components/RequestACallBackForm";
 import { motion } from "framer-motion";
+
 const GetInTouch = () => {
   const container = {
-    hidden: {},
+    hidden: { opacity: 0 },
     show: {
+      opacity: 1,
       transition: {
         staggerChildren: 0.2,
       },
@@ -32,8 +34,9 @@ const GetInTouch = () => {
       },
     },
   };
+
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative">
       <div className="container mx-auto px-5 lg:px-0 mt-28 relative w-full bg-primary-dark z-10 my-8 lg:my-24 lg:space-y-28 space-y-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           {/* Left Side */}
@@ -66,7 +69,7 @@ const GetInTouch = () => {
             </div>
 
             <motion.div variants={fadeInUp} className="mt-16 relative h-[212px] w-full overflow-hidden group">
-              <Link href={LocationLink} target="_blank">
+              <Link href={LocationLink} target="_blank" rel="noopener noreferrer">
                 <Image
                   src={Location}
                   alt="Location"

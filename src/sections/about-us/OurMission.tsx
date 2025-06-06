@@ -25,7 +25,7 @@ const OurMission = () => {
               // animate={isInView ? { opacity: 1 } : {}}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
+              // viewport={{ once: true }}
               className="mt-[3px]"
             >
               At Host Quest LLC, our mission is to empower individuals and businesses by providing seamless recruitment
