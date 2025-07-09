@@ -20,6 +20,7 @@ This is the official website for **Host Quest LLC**, designed to be modern, scal
 To run in local
 - Make sure you have node.js in your computer.
 - Run this command to install dependencies "npm install"
+- use the .env.example template to add the necessary credentials needed.
 - After that, to run in your localhost, type "npm run dev"
 ---
 
