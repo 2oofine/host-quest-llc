@@ -1,13 +1,15 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { fetchUSCountryStates } from "@/api/country-state";
+import { fetchUSCountryStates } from "../../../pages/api/country-state";
 import { jobs } from "@/constants/jobs";
 import { OptionType } from "@/types";
 import { CountryData, State } from "@/types/countryState";
 import { JobType, WorkSetup } from "@/types/jobs";
 import { currencyToSign } from "@/utils/helpers";
+import axios from "axios";
 import { ChevronRight } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ReactSelect from "react-select";
 
 interface SearchState {
@@ -26,6 +28,8 @@ const JobPostings = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedJob, setSelectedJob] = useState<(typeof jobs)[number] | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+  const [error, setError] = useState<string | null>(null);
 
   // Detect client side render
   useEffect(() => {
@@ -99,7 +103,30 @@ const JobPostings = () => {
     setCurrentPage(1);
   }, [searchState]);
 
-  //TODO: create a onsubmit handler for form modal for applying a job
+  //Submit job application
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError(null);
+    setIsLoading(true);
+
+    try {
+      const formData = new FormData(formRef.current!);
+      formData.append("position", selectedJob?.title ?? "");
+
+      const response = await axios.post("/api/submit-job", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
+      console.log("✅ Submission successful:", response.data.message);
+      alert("Application submitted!");
+      setIsModalOpen(false);
+    } catch (err: any) {
+      setError("Failed to submit. Please try again.");
+      console.error("❌ Submission error:", err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <section className="relative overflow-hidden">
@@ -315,10 +342,11 @@ const JobPostings = () => {
 
             <p className="mb-6 text-primary-dark">{selectedJob.description || "No description available."}</p>
 
-            <form className="flex flex-col gap-4">
+            <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-4" encType="multipart/form-data">
               <label className="block">
                 <span className="text-sm font-medium text-gray-700">Your Name</span>
                 <input
+                  name="fullName"
                   type="text"
                   className="mt-1 px-2 py-2 block w-full rounded-md text-primary-dark border border-gray-300 shadow-sm focus:border-primary-light focus:ring focus:ring-primary-light/50"
                   required
@@ -328,6 +356,7 @@ const JobPostings = () => {
               <label className="block">
                 <span className="text-sm font-medium text-gray-700">Email</span>
                 <input
+                  name="email"
                   type="email"
                   className="mt-1 px-2 py-2 text-primary-dark block w-full rounded-md border border-gray-300 shadow-sm focus:border-primary-light focus:ring focus:ring-primary-light/50"
                   required
@@ -337,6 +366,7 @@ const JobPostings = () => {
               <label className="block">
                 <span className="text-sm font-medium text-gray-700">Upload Resume</span>
                 <input
+                  name="resume"
                   type="file"
                   accept=".pdf,.doc,.docx"
                   className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:bg-primary-light file:text-primary-dark hover:file:bg-primary-dark hover:file:text-white"
@@ -346,10 +376,12 @@ const JobPostings = () => {
 
               <button
                 type="submit"
+                disabled={isLoading}
                 className="mt-4 bg-primary-light hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md transition-colors"
               >
                 Submit Application
               </button>
+              {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
             </form>
           </div>
         </div>

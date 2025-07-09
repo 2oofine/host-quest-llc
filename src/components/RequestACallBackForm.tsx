@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
+import axios from "axios";
 import React, { useRef, useState } from "react";
-
 interface Props {
   isFromContactUs?: boolean;
 }
@@ -14,8 +14,9 @@ const RequestACallBackForm = (props: Props) => {
 
   const [error, setError] = useState<string | null>(null);
   const [emptyFields, setEmptyFields] = useState<string[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const formData = {
@@ -37,13 +38,31 @@ const RequestACallBackForm = (props: Props) => {
 
     setError(null);
     setEmptyFields([]);
-    console.log("Form submitted:", formData);
+    setIsLoading(true);
 
-    // Clear form after submission
-    fullNameRef.current!.value = "";
-    emailRef.current!.value = "";
-    phoneRef.current!.value = "";
-    messageRef.current!.value = "";
+    try {
+      const response = await axios.post("/api/send-email", formData);
+
+      console.log("✅ Email sent:", response.data.message);
+      // setSuccess("Message sent successfully!");
+
+      // Clear form
+      fullNameRef.current!.value = "";
+      emailRef.current!.value = "";
+      phoneRef.current!.value = "";
+      messageRef.current!.value = "";
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error)) {
+        console.error("❌ Failed to send:", error.response?.data?.message || error.message);
+      } else if (error instanceof Error) {
+        console.error("❌ Failed to send:", error.message);
+      } else {
+        console.error("❌ Failed to send:", error);
+      }
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
   return (
     <>
@@ -90,6 +109,7 @@ const RequestACallBackForm = (props: Props) => {
 
         <div className="mt-auto">
           <button
+            disabled={isLoading}
             type="submit"
             className={`btn-primary-42 w-full rounded-none ${
               isFromContactUs ? "hover:bg-primary-light/70 bg-primary-light" : "hover:bg-slate-300 bg-white"
