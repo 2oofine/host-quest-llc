@@ -5,7 +5,6 @@ import FiveStars from "../../../public/icons/home/5-stars.svg";
 import Euresa from "../../../public/images/home/euresa.png";
 import Mina from "../../../public/images/home/mina.png";
 import Sujan from "../../../public/images/home/sujan.png";
-import { useState, useEffect } from "react";
 
 interface ITestimonials {
   avatar: string | StaticImageData;
@@ -56,13 +55,7 @@ const Testimonials = () => {
   //   const prevIndex = currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1;
   //   setSelectedTestimonial(testimonials[prevIndex]);
   // };
-  const [hydrated, setHydrated] = useState(false);
 
-  useEffect(() => {
-    setHydrated(true);
-  }, []);
-
-  if (!hydrated) return null; // Wait until client
   return (
     <section className="relative overflow-hidden">
       <hr

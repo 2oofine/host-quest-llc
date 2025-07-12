@@ -1,17 +1,10 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import HeroBanner from "../../../public/images/home/home-hero-banner.jpg";
 import { motion } from "framer-motion";
 
 const Hero = () => {
-  const [hydrated, setHydrated] = useState(false);
-
-  useEffect(() => {
-    setHydrated(true);
-  }, []);
-
-  if (!hydrated) return null; // Wait until client
   return (
     <section className="relative w-full min-h-screen flex items-center pt-32 pb-20 md:pt-0 md:pb-0">
       {/* Background Image */}
@@ -25,7 +18,6 @@ const Hero = () => {
         {/* Title */}
         <motion.div
           className="space-y-3 mb-6"
-          style={{ willChange: "opacity, transform" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}

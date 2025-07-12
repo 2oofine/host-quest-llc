@@ -5,7 +5,6 @@ import Equality from "../../../public/icons/home/equality.svg";
 import HeartPartnerHandshake from "../../../public/icons/home/heart-partner-handshake.svg";
 import IndustryAlt from "../../../public/icons/home/industry-alt.svg";
 import Quality from "../../../public/icons/home/quality.svg";
-import { useState, useEffect } from "react";
 
 const cards = [
   {
@@ -35,13 +34,6 @@ const cards = [
 ];
 
 const WhyBusinessesTrustHQL = () => {
-  const [hydrated, setHydrated] = useState(false);
-
-  useEffect(() => {
-    setHydrated(true);
-  }, []);
-
-  if (!hydrated) return null; // Wait until client
   return (
     <section className="relative overflow-hidden bg-secondary-light">
       <div className="container mx-auto mt-[50px] w-full  relative overflow-hidden z-10">

@@ -8,20 +8,13 @@ import RadarMonitoringTrack from "../../../public/icons/home/radar-monitoring-tr
 import Star from "../../../public/icons/home/star.svg";
 import Tools from "../../../public/icons/home/tools.svg";
 import WSUA from "../../../public/images/home/home-what-sets-us-apart.jpg";
-import { useState, useEffect } from "react";
 
 interface Props {
   light?: boolean;
 }
 const WhatSetsUsApart = (props: Props) => {
   const { light = false } = props;
-  const [hydrated, setHydrated] = useState(false);
 
-  useEffect(() => {
-    setHydrated(true);
-  }, []);
-
-  if (!hydrated) return null; // Wait until client
   const cardData = [
     { icon: Star, iconName: "Star", text: "Industry Expertise" },
     {

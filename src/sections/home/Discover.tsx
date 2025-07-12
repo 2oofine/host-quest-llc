@@ -8,16 +8,8 @@ import Briefcase from "../../../public/icons/home/briefcase.svg";
 import Search from "../../../public/icons/home/search.svg";
 import AdvanceCareer from "../../../public/images/home/home-discover-advance-your-career.jpg";
 import StrongWorkforce from "../../../public/images/employers/employersbanner.png";
-import { useState, useEffect } from "react";
 
 const Discover = () => {
-  const [hydrated, setHydrated] = useState(false);
-
-  useEffect(() => {
-    setHydrated(true);
-  }, []);
-
-  if (!hydrated) return null; // Wait until client
   return (
     <section className="relative overflow-hidden">
       <div className="w-full bg-secondary-light z-10">
@@ -52,7 +44,7 @@ const Discover = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center text-primary-dark px-5 lg:px-0"
+            className="text-center text-primary-dark"
           >
             <h1 className="text-[30px] md:text-[40px] font-semibold leading-none">Discover How We Can Help You</h1>
             <p className="mt-[9px]">
