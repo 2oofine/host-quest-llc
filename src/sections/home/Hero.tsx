@@ -55,7 +55,7 @@ const Hero = () => {
           <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+            // transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
             className="hover:bg-aeroBlue hover:border-transparent hover:text-charcoalNavy btn-primary-42 w-[210px] border border-white font-semibold"
           >
             Employers
