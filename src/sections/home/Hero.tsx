@@ -45,7 +45,7 @@ const Hero = () => {
         {/* Buttons */}
         <div className="flex flex-col md:flex-row items-center gap-4">
           <motion.button
-            initial={false}
+            initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             // transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
             className="hover:bg-[#78B0B2] hover:text-white btn-primary-42 bg-aeroBlue w-[210px] text-charcoalNavy font-semibold"
