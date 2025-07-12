@@ -44,7 +44,7 @@ const Discover = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-center text-primary-dark"
+            className="text-center text-primary-dark px-5 lg:px-0"
           >
             <h1 className="text-[30px] md:text-[40px] font-semibold leading-none">Discover How We Can Help You</h1>
             <p className="mt-[9px]">
