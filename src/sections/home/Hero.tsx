@@ -1,10 +1,24 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HeroBanner from "../../../public/images/home/home-hero-banner.jpg";
 import { motion } from "framer-motion";
 
 const Hero = () => {
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => setHydrated(true), []);
+
+  const paragraph = (
+    <p className="my-5 text-base md:text-xl font-thin container lg:text-left lg:w-[63%] w-full">
+      At Host Quest LLC, we are dedicated to connecting skilled and unskilled professionals with the right career
+      opportunities while empowering businesses of all sizes with top-tier talent. As a leading international
+      recruitment agency, we provide tailored workforce solutions that streamline hiring, enhance productivity, and
+      drive long-term success for both job seekers and employers.
+    </p>
+  );
+
+  if (!hydrated) return paragraph;
+
   return (
     <section className="relative w-full h-screen">
       <Image src={HeroBanner} alt="Hero Banner" style={{ objectFit: "cover", objectPosition: "top" }} fill priority />
@@ -31,7 +45,6 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
         >
-          {" "}
           At Host Quest LLC, we are dedicated to connecting skilled and unskilled professionals with the right career
           opportunities while empowering businesses of all sizes with top-tier talent. As a leading international
           recruitment agency, we provide tailored workforce solutions that streamline hiring, enhance productivity, and
