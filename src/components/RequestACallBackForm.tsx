@@ -73,6 +73,7 @@ const RequestACallBackForm = (props: Props) => {
           {/* Added flex-grow here */}
           <input
             type="text"
+            aria-label="Full Name"
             ref={fullNameRef}
             placeholder="Full Name *"
             required
@@ -82,6 +83,7 @@ const RequestACallBackForm = (props: Props) => {
           />
           <input
             type="email"
+            aria-label="Email Address"
             ref={emailRef}
             placeholder="Email Address *"
             required
@@ -91,6 +93,7 @@ const RequestACallBackForm = (props: Props) => {
           />
           <input
             type="tel"
+            aria-label="Phone Number"
             ref={phoneRef}
             placeholder="Phone Number (Optional)"
             className={`max-w-full ${
@@ -98,6 +101,7 @@ const RequestACallBackForm = (props: Props) => {
             } h-[60px] p-[18px] bg-white text-black placeholder-silver font-light`}
           />
           <textarea
+            aria-label="Message"
             ref={messageRef}
             placeholder="Message"
             rows={isFromContactUs ? 15 : 10}
