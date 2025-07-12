@@ -99,7 +99,7 @@ const EmpowerAndSupport = () => {
             <h1 className="font-semibold text-[32px] lg:text-[40px]">
               Empowering <span className="text-primary-light">Job Seekers</span>
             </h1>
-            <p className="mt-1 text-[16px] lg:text-[18px] w-[52%]">
+            <p className="mt-1 text-[16px] lg:text-[18px] lg:w-[52%]">
               We understand that finding the right job is more than just securing employment—it’s about building a
               meaningful career. Our services include:
             </p>
@@ -179,7 +179,7 @@ const EmpowerAndSupport = () => {
               <br />
               With <span className="text-primary-light">Top Talent</span>
             </h1>
-            <p className="mt-1 text-[16px] lg:text-[18px] w-[52%] ml-auto">
+            <p className="mt-1 text-[16px] lg:text-[18px] lg:w-[52%] ml-auto">
               The strength of any business lies in its people. We help organizations identify, attract, and retain top
               talent through:
             </p>
