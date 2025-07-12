@@ -25,7 +25,7 @@ const Hero = () => {
 
         {/* Animated Description */}
         <motion.p
-          className="my-5 text-[16px] md:text-xl mx-auto max-w-full w-[1164px] font-thin"
+          className="my-5 text-base md:text-xl mx-auto max-w-[1164px] w-full font-thin"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
