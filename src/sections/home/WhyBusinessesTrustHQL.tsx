@@ -99,13 +99,13 @@ const WhyBusinessesTrustHQL = () => {
             {cards.map((card, index) => (
               <motion.li
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 // animate={isInView ? { opacity: 1, y: 0 } : {}}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
+                viewport={{ once: true }}
                 whileTap={{ scale: 0.95 }}
-                className="max-w-full w-[325px] transition-all rounded-md"
+                className="max-w-full w-[325px] rounded-md"
               >
                 <motion.div
                   whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)" }}
