@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import HeroBanner from "../../../public/images/home/home-hero-banner.jpg";
 import { motion } from "framer-motion";
 
