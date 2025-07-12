@@ -12,6 +12,7 @@ const Hero = () => {
   }, []);
 
   if (!hydrated) return null; // Wait until client
+
   return (
     <section className="relative w-full min-h-screen flex items-center pt-32 pb-20 md:pt-0 md:pb-0">
       {/* Background Image */}

@@ -8,8 +8,16 @@ import BadgeCheck from "../../../public/icons/home/badge-check.svg";
 import HourglassStart from "../../../public/icons/home/hourglass-start.svg";
 import LinkAlt from "../../../public/icons/home/link-alt.svg";
 import InfoCard from "../../components/InfoCard";
+import { useState, useEffect } from "react";
 
 const EmpowerAndSupport = () => {
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  if (!hydrated) return null; // Wait until client
   // Variants for the first section (left to center)
   const listVariantsLeft = {
     hidden: { opacity: 0, x: -100 },

@@ -14,7 +14,13 @@ interface Props {
 }
 const WhatSetsUsApart = (props: Props) => {
   const { light = false } = props;
+  const [hydrated, setHydrated] = useState(false);
 
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  if (!hydrated) return null; // Wait until client
   const cardData = [
     { icon: Star, iconName: "Star", text: "Industry Expertise" },
     {

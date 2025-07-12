@@ -34,6 +34,13 @@ const cards = [
 ];
 
 const WhyBusinessesTrustHQL = () => {
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  if (!hydrated) return null; // Wait until client
   return (
     <section className="relative overflow-hidden bg-secondary-light">
       <div className="container mx-auto mt-[50px] w-full  relative overflow-hidden z-10">

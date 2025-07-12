@@ -3,7 +3,15 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import GlobalRecruitment from "../../../public/images/home/home-global-recruitment-partner.jpg";
+import { useState, useEffect } from "react";
 const GlobalRecruitmentPartner = () => {
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  if (!hydrated) return null; // Wait until client
   return (
     <section className="relative overflow-hidden">
       {/* <div className="container mx-auto absolute inset-0 ">

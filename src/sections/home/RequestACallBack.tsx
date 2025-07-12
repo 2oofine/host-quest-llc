@@ -1,9 +1,17 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import RACB from "../../../public/images/home/home-request-a-call-back.jpg";
 import RequestACallBackForm from "@/components/RequestACallBackForm";
 
 const RequestACallBack = () => {
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  if (!hydrated) return null; // Wait until client
   return (
     <section className="relative overflow-hidden w-full min-h-screen lg:h-screen mt-32">
       <Image src={RACB} alt="Hero Banner" style={{ objectFit: "cover", objectPosition: "top" }} fill priority />
