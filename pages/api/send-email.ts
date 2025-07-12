@@ -8,7 +8,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const { fullName, email, phone, message } = req.body;
 
-  if (!fullName || !email || !phone || !message) {
+  if (!fullName || !email || !message) {
     return res.status(400).json({ message: "All fields are required." });
   }
 
@@ -32,7 +32,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         <h2>New Message from Contact Form</h2>
         <p><strong>Name:</strong> ${fullName}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Phone:</strong> ${phone || "N/A"}</p>
         <p><strong>Message:</strong><br/>${message}</p>
       `,
     });
