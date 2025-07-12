@@ -22,7 +22,7 @@ const EmployersPage = () => {
       <SupportingBusinessWithTopTalent />
       <WhatSetsUsApart />
       <hr
-        className="w-[150%] -ml-[25%] h-[1px] border-0"
+        className="w-[100%]  h-[1px] border-0"
         style={{
           background: "linear-gradient(to right, transparent, #07C6D0, transparent)", // replace #D1D5DB with your `text-primary-light`
         }}

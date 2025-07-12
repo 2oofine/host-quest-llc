@@ -218,37 +218,40 @@ const JobPostings = () => {
 
                   return (
                     <div
-                      className="w-full flex items-center justify-between gap-x-5 bg-white shadow-custom py-3 px-5 lg:px-7"
-                      style={{ height: `128px` }}
+                      className="w-full flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-x-5 bg-white shadow-custom py-4 px-4 sm:px-5 lg:px-7"
+                      style={{ height: "auto" }} // Let it adjust height on smaller screens
                       key={job.id}
                     >
-                      <div className="flex flex-col">
-                        <div className="mb-4">
-                          <h6 className="text-2xl">{job.title}</h6>
-                          <p className="italic text-base">{job.state.name}</p>
+                      <div className="flex flex-col flex-1">
+                        <div className="mb-2 sm:mb-4">
+                          <h6 className="text-xl sm:text-2xl">{job.title}</h6>
+                          <p className="italic text-sm sm:text-base">{job.state.name}</p>
                         </div>
 
-                        <div className="flex gap-2">
-                          <div className="bg-primary-light/10 px-4 w-fit rounded-full text-primary-dark text-xs">
+                        <div className="flex flex-wrap gap-2">
+                          <div className="bg-primary-light/10 px-3 sm:px-4 py-1 rounded-full text-primary-dark text-xs">
                             {job.jobType}
                           </div>
-                          <div className="bg-primary-light/10 px-4 w-fit rounded-full text-primary-dark text-xs">
+                          <div className="bg-primary-light/10 px-3 sm:px-4 py-1 rounded-full text-primary-dark text-xs">
                             {formattedSalary}
                           </div>
-                          <div className="bg-primary-light/10 px-4 w-fit rounded-full text-primary-dark text-xs">
+                          <div className="bg-primary-light/10 px-3 sm:px-4 py-1 rounded-full text-primary-dark text-xs">
                             {job.workSetup}
                           </div>
                         </div>
                       </div>
-                      <button
-                        onClick={() => {
-                          setSelectedJob(job);
-                          setIsModalOpen(true);
-                        }}
-                        className="flex items-center justify-center w-12 h-12 rounded-full bg-primary-light hover:bg-primary-dark transition-colors"
-                      >
-                        <ChevronRight className="w-8 h-8 text-primary-dark hover:text-white" />
-                      </button>
+
+                      <div className="flex justify-end sm:justify-center">
+                        <button
+                          onClick={() => {
+                            setSelectedJob(job);
+                            setIsModalOpen(true);
+                          }}
+                          className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-light hover:bg-primary-dark transition-colors"
+                        >
+                          <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8 text-primary-dark hover:text-white" />
+                        </button>
+                      </div>
                     </div>
                   );
                 })
