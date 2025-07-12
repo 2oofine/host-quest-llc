@@ -18,7 +18,7 @@ const Hero = () => {
         {/* Title */}
         <motion.div
           className="space-y-3 mb-6"
-          initial={false}
+          initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           // transition={{ duration: 0.8, ease: "easeOut" }}
         >
@@ -32,7 +32,7 @@ const Hero = () => {
         {/* Description */}
         <motion.p
           className="text-[16px] md:text-xl max-w-[836px] font-thin mb-6"
-          initial={false}
+          initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           // transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
         >
@@ -53,7 +53,7 @@ const Hero = () => {
             Job Seekers
           </motion.button>
           <motion.button
-            initial={false}
+            initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             // transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
             className="hover:bg-aeroBlue hover:border-transparent hover:text-charcoalNavy btn-primary-42 w-[210px] border border-white font-semibold"
