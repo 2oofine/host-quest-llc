@@ -1,10 +1,17 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HeroBanner from "../../../public/images/home/home-hero-banner.jpg";
 import { motion } from "framer-motion";
 
 const Hero = () => {
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  if (!hydrated) return null; // Wait until client
   return (
     <section className="relative w-full min-h-screen flex items-center pt-32 pb-20 md:pt-0 md:pb-0">
       {/* Background Image */}

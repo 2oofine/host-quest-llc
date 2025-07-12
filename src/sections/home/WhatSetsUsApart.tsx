@@ -110,7 +110,7 @@ const WhatSetsUsApart = (props: Props) => {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               // animate={isInView ? { opacity: 1, y: 0 } : {}}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, ease: "easeOut" }}
               className="lg:block mt-[31px] lg:mt-0 text-[16px] lg:text-[18px]"
@@ -126,8 +126,8 @@ const WhatSetsUsApart = (props: Props) => {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   // animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  animate={{ opacity: 1, y: 0 }}
-                  // transition={{ duration: 0.5, delay: index * 0.2 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
                   viewport={{ once: true }}
                   className="w-full"
                 >
