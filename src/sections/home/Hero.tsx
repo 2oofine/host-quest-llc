@@ -20,7 +20,7 @@ const Hero = () => {
           className="space-y-3 mb-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          // transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h1 className="text-3xl md:text-5xl font-semibold">Host Quest LLC Bridging</h1>
           <h1 className="text-3xl md:text-5xl font-semibold">
@@ -34,7 +34,7 @@ const Hero = () => {
           className="text-[16px] md:text-xl max-w-[836px] font-thin mb-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          // transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+          transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
         >
           At Host Quest LLC, we are dedicated to connecting skilled and unskilled professionals with the right career
           opportunities while empowering businesses of all sizes with top-tier talent. As a leading international
@@ -47,7 +47,7 @@ const Hero = () => {
           <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            // transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+            transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
             className="hover:bg-[#78B0B2] hover:text-white btn-primary-42 bg-aeroBlue w-[210px] text-charcoalNavy font-semibold"
           >
             Job Seekers
@@ -55,7 +55,7 @@ const Hero = () => {
           <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            // transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+            transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
             className="hover:bg-aeroBlue hover:border-transparent hover:text-charcoalNavy btn-primary-42 w-[210px] border border-white font-semibold"
           >
             Employers
