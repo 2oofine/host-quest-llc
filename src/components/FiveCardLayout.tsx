@@ -1,4 +1,4 @@
-import { CardItems } from "@/types/card";
+import { CardItems } from "../types/card";
 import SimpleCard from "./SimpleCard";
 
 interface Props {
