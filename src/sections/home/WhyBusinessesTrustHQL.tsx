@@ -5,6 +5,7 @@ import Equality from "../../../public/icons/home/equality.svg";
 import HeartPartnerHandshake from "../../../public/icons/home/heart-partner-handshake.svg";
 import IndustryAlt from "../../../public/icons/home/industry-alt.svg";
 import Quality from "../../../public/icons/home/quality.svg";
+import { useState, useEffect } from "react";
 
 const cards = [
   {

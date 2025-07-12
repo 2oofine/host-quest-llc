@@ -8,6 +8,7 @@ import RadarMonitoringTrack from "../../../public/icons/home/radar-monitoring-tr
 import Star from "../../../public/icons/home/star.svg";
 import Tools from "../../../public/icons/home/tools.svg";
 import WSUA from "../../../public/images/home/home-what-sets-us-apart.jpg";
+import { useState, useEffect } from "react";
 
 interface Props {
   light?: boolean;
