@@ -39,7 +39,7 @@ const GlobalRecruitmentPartner = () => {
             transition={{ duration: 0.2, ease: "easeOut", delay: 0.4 }}
             className="relative w-full lg:w-[555px] h-96 lg:h-[636px] max-w-full flex items-center"
           >
-            <div className="absolute inset-0 flex flex-col items-center text-center justify-center text-white text-[32px] bg-gradient-to-b from-[#6980A7]/0 to-[#293241]/100 p-4 rounded-lg">
+            <div className="absolute inset-0 flex flex-col items-center text-center justify-center text-white text-[32px] bg-gradient-to-b from-[#6980A7]/0 to-[#293241]/100 p-4">
               <h1 className="font-semibold lg:hidden">
                 Your Global <span className="text-primary-light">Recruitment Partner</span>
               </h1>
@@ -47,7 +47,7 @@ const GlobalRecruitmentPartner = () => {
             <Image
               src={GlobalRecruitment}
               alt="Your Global Recruitment Partner"
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full h-full object-cover"
             />
           </motion.div>
 
