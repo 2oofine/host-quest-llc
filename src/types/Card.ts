@@ -4,5 +4,5 @@ export type CardItems = {
 
 export type CardItem = {
   title: string;
-  subtitle: string;
+  subtitle?: string;
 };
