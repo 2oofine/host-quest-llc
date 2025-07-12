@@ -18,7 +18,8 @@ const Hero = () => {
         {/* Title */}
         <motion.div
           className="space-y-3 mb-6"
-          initial={{ opacity: 0 }}
+          style={{ willChange: "opacity, transform" }}
+          initial={false}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
@@ -32,7 +33,8 @@ const Hero = () => {
         {/* Description */}
         <motion.p
           className="text-[16px] md:text-xl max-w-[836px] font-thin mb-6"
-          initial={{ opacity: 0 }}
+          style={{ willChange: "opacity, transform" }}
+          initial={false}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
         >
@@ -45,7 +47,8 @@ const Hero = () => {
         {/* Buttons */}
         <div className="flex flex-col md:flex-row items-center gap-4">
           <motion.button
-            initial={{ opacity: 0 }}
+            style={{ willChange: "opacity, transform" }}
+            initial={false}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
             className="hover:bg-[#78B0B2] hover:text-white btn-primary-42 bg-aeroBlue w-[210px] text-charcoalNavy font-semibold"
@@ -53,7 +56,8 @@ const Hero = () => {
             Job Seekers
           </motion.button>
           <motion.button
-            initial={{ opacity: 0 }}
+            style={{ willChange: "opacity, transform" }}
+            initial={false}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
             className="hover:bg-aeroBlue hover:border-transparent hover:text-charcoalNavy btn-primary-42 w-[210px] border border-white font-semibold"
