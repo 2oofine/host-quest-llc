@@ -115,7 +115,7 @@ const RequestACallBackForm = (props: Props) => {
               isFromContactUs ? "hover:bg-primary-light/70 bg-primary-light" : "hover:bg-slate-300 bg-white"
             }  text-black`}
           >
-            {isFromContactUs ? "Send Now" : "Send Request"}
+            {isLoading ? "Sending..." : isFromContactUs ? "Send Now" : "Send Request"}
           </button>
           {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
         </div>

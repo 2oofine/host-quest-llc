@@ -382,7 +382,7 @@ const JobPostings = () => {
                 disabled={isLoading}
                 className="mt-4 bg-primary-light hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-md transition-colors"
               >
-                Submit Application
+                {isLoading ? "Submitting..." : "Submit Application"}
               </button>
               {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
             </form>
