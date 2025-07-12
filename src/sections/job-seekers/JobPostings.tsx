@@ -243,6 +243,7 @@ const JobPostings = () => {
 
                       <div className="flex justify-end sm:justify-center">
                         <button
+                          aria-label="View Job Details"
                           onClick={() => {
                             setSelectedJob(job);
                             setIsModalOpen(true);
@@ -262,6 +263,7 @@ const JobPostings = () => {
               <div className="flex justify-center items-center gap-3 mt-6">
                 {/* Prev Button */}
                 <button
+                  aria-label="Previous Button"
                   onClick={() => goToPage(currentPage - 1)}
                   disabled={currentPage === 1}
                   className={`flex items-center justify-center w-12 h-12 rounded-full transition-colors ${
@@ -295,6 +297,7 @@ const JobPostings = () => {
 
                 {/* Next Button */}
                 <button
+                  aria-label="Next Button"
                   onClick={() => goToPage(currentPage + 1)}
                   disabled={currentPage === totalPages}
                   className={`flex items-center justify-center w-12 h-12 rounded-full transition-colors ${
