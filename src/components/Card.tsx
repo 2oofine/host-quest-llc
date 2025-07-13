@@ -19,15 +19,15 @@ const Card = (props: LongCardProps) => {
           <Image src={icon} alt={iconName} width={50} height={50} className="w-[50px] h-[50px]" />
         </div>
 
-        <div className="mt-10 flex-1 text-center lg:text-left max-w-full w-[232px]">
-          <h2 className="text-2xl font-semibold mt-5 lg:h-[76px]">
+        <div className="mt-10 relative flex-1 text-center lg:text-left max-w-full">
+          <h2 className="text-base xl:text-2xl font-semibold mt-5 lg:h-[76px]">
             {title.split(" ").map((word, index) => (
               <span key={index}>
                 {word} <br />
               </span>
             ))}
           </h2>
-          <p className="text-lg font-light ">{text}</p>
+          <p className="text-base xl:text-lg  font-light ">{text}</p>
         </div>
       </div>
     </div>
