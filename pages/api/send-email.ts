@@ -27,13 +27,37 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       from: `"Contact Form" <${process.env.SMTP_USER}>`,
       to: process.env.RECEIVER_EMAIL,
       replyTo: email,
-      subject: "New Contact Form Submission",
+      subject: "📬 New Contact Form Submission",
       html: `
-        <h2>New Message from Contact Form</h2>
-        <p><strong>Name:</strong> ${fullName}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone || "N/A"}</p>
-        <p><strong>Message:</strong><br/>${message}</p>
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px;">
+          <h2 style="color: #2c3e50;">📨 New Contact Form Submission</h2>
+          <p>You’ve received a message through your website's contact form:</p>
+    
+          <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+            <tr>
+              <td style="padding: 8px; font-weight: bold;">Name</td>
+              <td style="padding: 8px;">${fullName}</td>
+            </tr>
+            <tr style="background-color: #f9f9f9;">
+              <td style="padding: 8px; font-weight: bold;">Email</td>
+              <td style="padding: 8px;"><a href="mailto:${email}">${email}</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; font-weight: bold;">Phone</td>
+              <td style="padding: 8px;">${phone || "N/A"}</td>
+            </tr>
+          </table>
+    
+          <div style="margin-top: 20px;">
+            <p style="font-weight: bold;">Message:</p>
+            <div style="padding: 12px; background-color: #f4f4f4; border-radius: 6px;">
+              ${message.replace(/\n/g, "<br/>")}
+            </div>
+          </div>
+    
+          <hr style="margin: 30px 0;" />
+          <small style="color: #888;">This message was submitted via your website contact form.</small>
+        </div>
       `,
     });
 
