@@ -69,7 +69,6 @@ const RequestACallBackForm = (props: Props) => {
       {/* Form */}
       <form className="mt-6 space-y-[22px] flex flex-col h-full" onSubmit={handleSubmit}>
         <div className="flex flex-col space-y-[22px]">
-          {" "}
           {/* Added flex-grow here */}
           <input
             type="text"

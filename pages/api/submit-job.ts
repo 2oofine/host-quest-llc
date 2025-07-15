@@ -37,17 +37,36 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           pass: process.env.SMTP_PASS,
         },
       });
-
       await transporter.sendMail({
         from: `"Job Application" <${process.env.SMTP_USER}>`,
         to: process.env.RECEIVER_EMAIL,
-        subject: `Job Application: ${position} - ${fullName}`,
+        subject: `📩 Job Application: ${position} - ${fullName}`,
         html: `
-          <h3>New Job Application</h3>
-          <p><strong>Position:</strong> ${position}</p>
-          <p><strong>Name:</strong> ${fullName}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p>Resume: Attached</p>
+          <div style="font-family: Arial, sans-serif; color: #333; padding: 20px; max-width: 600px; margin: auto; border: 1px solid #eee; border-radius: 8px;">
+            <h2 style="color: #2c3e50;">New Job Application Received</h2>
+            <p>You’ve received a new job application with the following details:</p>
+            <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+              <tr>
+                <td style="padding: 8px; font-weight: bold;">Position</td>
+                <td style="padding: 8px;">${position}</td>
+              </tr>
+              <tr style="background-color: #f9f9f9;">
+                <td style="padding: 8px; font-weight: bold;">Full Name</td>
+                <td style="padding: 8px;">${fullName}</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px; font-weight: bold;">Email</td>
+                <td style="padding: 8px;">${email}</td>
+              </tr>
+              <tr style="background-color: #f9f9f9;">
+                <td style="padding: 8px; font-weight: bold;">Resume</td>
+                <td style="padding: 8px;">Attached to this email</td>
+              </tr>
+            </table>
+            <p style="margin-top: 20px;">Please review the resume and respond accordingly.</p>
+            <hr style="margin: 30px 0;" />
+            <small style="color: #888;">This email was generated automatically by your job application portal.</small>
+          </div>
         `,
         attachments: [
           {
