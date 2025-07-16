@@ -5,6 +5,9 @@ on:
     branches:
       - main
       - staging
+  pull_request:
+    branches:
+      - staging
 
 jobs:
   deploy:
@@ -24,7 +27,7 @@ jobs:
       - name: Run Lint
         run: npm run lint
 
-      # TODO: I'll bring back if I implemented test
+      # TODO: I'll bring back if I implemented a test
       # - name: Run Tests
       #   run: npm run test
 
@@ -40,7 +43,7 @@ jobs:
           vercel-args: --prod
 
       - name: Deploy to Vercel (Preview)
-        if: github.ref != 'refs/heads/main'
+        if: github.event_name == 'pull_request' || github.ref == 'refs/heads/staging'
         uses: amondnet/vercel-action@v20
         with:
           zeit-token: ${{secrets.VERCEL_TOKEN}}
