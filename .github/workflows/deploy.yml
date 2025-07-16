@@ -1,0 +1,49 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Lint
+        run: npm run lint
+
+      - name: Run Tests
+        run: npm run test
+
+      - name: Deploy to Vercel (Production)
+        if: github.ref == 'refs/heads/main'
+        uses: amondnet/vercel-action@v20
+        with:
+          zeit-token: ${{secrets.VERCEL_TOKEN}}
+          vercel-token: ${{secrets.VERCEL_TOKEN}}
+          vercel-org-id: ${{secrets.VERCEL_ORG_ID}}
+          vercel-project-id: ${{secrets.VERCEL_PROJECT_ID}}
+          working-directory: ./
+          vercel-args: --prod
+
+      - name: Deploy to Vercel (Preview)
+        if: github.ref != 'refs/heads/main'
+        uses: amondnet/vercel-action@v20
+        with:
+          zeit-token: ${{secrets.VERCEL_TOKEN}}
+          vercel-token: ${{secrets.VERCEL_TOKEN}}
+          vercel-org-id: ${{secrets.VERCEL_ORG_ID}}
+          vercel-project-id: ${{secrets.VERCEL_PROJECT_ID}}
+          working-directory: ./
