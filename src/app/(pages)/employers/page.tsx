@@ -7,6 +7,15 @@ import WhatSetsUsApart from "@/sections/home/WhatSetsUsApart";
 
 export const metadata: Metadata = {
   title: "Employers",
+  description: "Partner with HostQuest LLC to find top-tier candidates tailored to your company’s needs.",
+  keywords: ["employer hiring", "recruitment partner", "staffing solutions", "find talent", "HostQuest employers"],
+  openGraph: {
+    title: "Employers | HostQuest LLC",
+    description: "Custom staffing solutions for employers across industries.",
+    url: "https://hostquestllc.com/employers",
+    siteName: "HostQuest LLC",
+    type: "website",
+  },
 };
 
 const EmployersPage = () => {

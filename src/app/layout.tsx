@@ -19,10 +19,19 @@ export const metadata: Metadata = {
     template: `%s | Host Quest LLC`,
     default: APP_NAME,
   },
+  keywords: ["HostQuest LLC", "job application", "apply online", "employment", "job seekers", "hiring"],
   description: APP_DESCRIPTION,
   metadataBase: new URL(NEXT_PUBLIC_CLIENT_BASE_URL),
   icons: {
     icon: "/logos/logo.svg",
+  },
+  openGraph: {
+    title: "HostQuest LLC | Job Application Portal",
+    description: "Apply to jobs at HostQuest LLC through our easy-to-use portal.",
+    url: "https://hostquestllc.com", // Replace with your real domain
+    siteName: "HostQuest LLC",
+    type: "website",
+    locale: "en_US",
   },
 };
 
