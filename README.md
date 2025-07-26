@@ -5,7 +5,7 @@ This is the official website for **Host Quest LLC**, designed to be modern, scal
 ## 🌟 Tech Stack
 
 - **Frontend:** Next.js (App Router), TypeScript, Tailwind CSS
-- **Backend & Database:** Firebase
+- **Backend:** Next.js
 - **Styling:** Tailwind CSS
 - **Hosting & Deployment:** Vercel
 - **CI/CD:** Github Actions
