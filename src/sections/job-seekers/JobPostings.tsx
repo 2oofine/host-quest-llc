@@ -7,7 +7,7 @@ import { OptionType } from "@/types";
 import { CountryData, State } from "@/types/countryState";
 import { JobType, WorkSetup } from "@/types/jobs";
 import { currencyToSign } from "@/utils/helpers";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import ReactSelect from "react-select";
@@ -30,7 +30,7 @@ const JobPostings = () => {
   const [selectedJob, setSelectedJob] = useState<(typeof jobs)[number] | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
   const [error, setError] = useState<string | null>(null);
-
+  const [success, setSucess] = useState<string | null>(null);
   // Detect client side render
   useEffect(() => {
     setIsClient(true);
@@ -113,14 +113,28 @@ const JobPostings = () => {
       const formData = new FormData(formRef.current!);
       formData.append("position", selectedJob?.title ?? "");
 
-      const response = await axios.post("/api/submit-job", formData, {
+      await axios.post("/api/submit-job", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
-      console.log("✅ Submission successful:", response.data.message);
-      alert("Application submitted!");
+      // console.log("✅ Submission successful:", response.data.message);
+      // alert("Application submitted!");
+      setSucess("Application submitted successfully!");
       setIsModalOpen(false);
-    } catch (err: any) {
+    } catch (error) {
+      const err = error as AxiosError;
+      if (err) {
+        console.error("❌ Submission error:", err.message);
+        if (err.code === "429") {
+          setError("Too many requests. Please try again later.");
+        } else {
+          setError("Failed to submit. Please try again.");
+        }
+      } else if (error instanceof Error) {
+        console.error("❌ Submission error:", error.message);
+      } else {
+        console.error("❌ Submission error:", error);
+      }
       setError("Failed to submit. Please try again.");
       console.error("❌ Submission error:", err);
     } finally {
@@ -388,6 +402,7 @@ const JobPostings = () => {
                 {isLoading ? "Submitting..." : "Submit Application"}
               </button>
               {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
+              {success && <div className="text-green-500 text-sm mt-2">{success}</div>}
             </form>
           </div>
         </div>

@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { IncomingForm } from "formidable";
 import nodemailer from "nodemailer";
 import fs from "fs";
+import { limitByIp } from "@/lib/rateLimiter";
 
 export const config = {
   api: {
@@ -10,6 +11,11 @@ export const config = {
 };
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  const ip = req.headers["x-forwarded-for"]?.toString().split(",")[0] || req.socket.remoteAddress;
+
+  const allowed = await limitByIp(ip!, "job-application", 2, 3600); // 2 submissions per hour
+  if (!allowed) return res.status(429).json({ message: "Rate limit exceeded. Please try again later." });
+
   if (req.method !== "POST") return res.status(405).end("Method Not Allowed");
 
   const form = new IncomingForm({ keepExtensions: true });

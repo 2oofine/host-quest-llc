@@ -11,6 +11,7 @@
   "dependencies": {
     "@types/formidable": "^3.4.5",
     "@types/nodemailer": "^6.4.17",
+    "@upstash/redis": "^1.35.1",
     "axios": "^1.9.0",
     "formidable": "^3.5.4",
     "framer-motion": "^12.4.10",
