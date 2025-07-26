@@ -69,6 +69,8 @@ const RequestACallBackForm = (props: Props) => {
       }
       setSuccess(null);
     } finally {
+      setSuccess(null);
+      setError(null);
       setIsLoading(false);
     }
   };
