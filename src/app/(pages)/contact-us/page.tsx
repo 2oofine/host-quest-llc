@@ -6,6 +6,15 @@ import WhyBusinessesTrustHQL from "@/sections/home/WhyBusinessesTrustHQL";
 
 export const metadata: Metadata = {
   title: "Contact Us",
+  description: "Get in touch with HostQuest LLC for job inquiries, employer partnerships, or general support.",
+  keywords: ["contact HostQuest", "job support", "recruiter contact", "employment help", "get in touch"],
+  openGraph: {
+    title: "Contact Us | HostQuest LLC",
+    description: "Reach out to HostQuest for job or hiring inquiries.",
+    url: "https://hostquestllc.com/contact-us",
+    siteName: "HostQuest LLC",
+    type: "website",
+  },
 };
 
 const ContactUsPage = () => {

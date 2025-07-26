@@ -5,6 +5,15 @@ import JobPostings from "@/sections/job-seekers/JobPostings";
 
 export const metadata: Metadata = {
   title: "Jobseekers",
+  description: "Explore career opportunities with HostQuest LLC and apply online to get connected with top employers.",
+  keywords: ["job seekers", "find a job", "apply for work", "career opportunities", "HostQuest jobs"],
+  openGraph: {
+    title: "Jobseekers | HostQuest LLC",
+    description: "Find your next job through HostQuest's recruitment platform.",
+    url: "https://hostquestllc.com/job-seekers",
+    siteName: "HostQuest LLC",
+    type: "website",
+  },
 };
 
 const JobSeekersPage = () => {
