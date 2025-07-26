@@ -12,25 +12,25 @@ export const config = {
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") return res.status(405).end("Method Not Allowed");
-  const jobId = req.body.jobId;
-  console.log("request body", req.body);
-  const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress || "unknown";
-  const ipStr = Array.isArray(ip) ? ip[0] : ip;
-
-  const allowed = await limitByIp(ipStr, `job-apply:${jobId}`, 1, 60); // 1 request per 60s
-  if (!allowed) {
-    return res.status(429).json({ message: "Too many requests. Try again in a minute." });
-  }
 
   const form = new IncomingForm({ keepExtensions: true });
 
   form.parse(req, async (err, fields, files) => {
+    const { fullName, email, position, id } = fields;
+    console.log("request body", req.body);
+    const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress || "unknown";
+    const ipStr = Array.isArray(ip) ? ip[0] : ip;
+
+    const allowed = await limitByIp(ipStr, `job-apply:${id}`, 1, 60); // 1 request per 60s
+    if (!allowed) {
+      return res.status(429).json({ message: "Too many requests. Try again in a minute." });
+    }
+
     if (err) {
       console.error("❌ Form parse error:", err);
       return res.status(500).json({ message: "Form parsing error", error: err });
     }
 
-    const { fullName, email, position } = fields;
     const resume = Array.isArray(files.resume) ? files.resume[0] : files.resume;
 
     if (!fullName || !email || !position || !resume) {

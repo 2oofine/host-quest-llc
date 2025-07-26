@@ -112,7 +112,7 @@ const JobPostings = () => {
     try {
       const formData = new FormData(formRef.current!);
       formData.append("position", selectedJob?.title ?? "");
-      formData.append("jobId", String(selectedJob?.id) ?? "");
+      formData.append("id", String(selectedJob?.id) ?? "");
 
       await axios.post("/api/submit-job", formData, {
         headers: { "Content-Type": "multipart/form-data" },
