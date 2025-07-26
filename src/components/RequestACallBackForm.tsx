@@ -46,12 +46,16 @@ const RequestACallBackForm = (props: Props) => {
 
       console.log("✅ Email sent:", response.data.message);
       setSuccess("Message sent successfully!");
-
+      setError(null);
       // Clear form
       fullNameRef.current!.value = "";
       emailRef.current!.value = "";
       phoneRef.current!.value = "";
       messageRef.current!.value = "";
+
+      setTimeout(() => {
+        setSuccess(null);
+      }, 2000);
     } catch (error) {
       const err = error as AxiosError;
       if (err) {
@@ -69,8 +73,6 @@ const RequestACallBackForm = (props: Props) => {
       }
       setSuccess(null);
     } finally {
-      setSuccess(null);
-      setError(null);
       setIsLoading(false);
     }
   };

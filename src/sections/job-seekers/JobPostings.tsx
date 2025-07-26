@@ -1,7 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { fetchUSCountryStates } from "../../../pages/api/country-state";
 import { jobs } from "@/constants/jobs";
 import { OptionType } from "@/types";
 import { CountryData, State } from "@/types/countryState";
@@ -11,6 +9,7 @@ import axios, { AxiosError } from "axios";
 import { ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import ReactSelect from "react-select";
+import { fetchUSCountryStates } from "../../../pages/api/country-state";
 
 interface SearchState {
   states?: State[];
@@ -122,10 +121,11 @@ const JobPostings = () => {
       // alert("Application submitted!");
       setSuccess("Application submitted successfully!");
       setIsModalOpen(false);
+      setSuccess(null);
+      setError(null);
     } catch (error) {
       const err = error as AxiosError;
       if (err) {
-        console.error("❌ Submission error:", err.message);
         if (err.status === 429) {
           setError("Too many requests. Please try again later.");
         } else {
@@ -140,8 +140,6 @@ const JobPostings = () => {
       setSuccess(null);
       console.error("❌ Submission error:", err);
     } finally {
-      setSuccess(null);
-      setError(null);
       setIsLoading(false);
     }
   };
