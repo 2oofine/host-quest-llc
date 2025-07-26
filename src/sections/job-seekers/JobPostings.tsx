@@ -136,6 +136,7 @@ const JobPostings = () => {
         console.error("❌ Submission error:", error);
       }
       setError("Failed to submit. Please try again.");
+      setSucess(null);
       console.error("❌ Submission error:", err);
     } finally {
       setIsLoading(false);

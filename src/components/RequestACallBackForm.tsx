@@ -54,6 +54,8 @@ const RequestACallBackForm = (props: Props) => {
       messageRef.current!.value = "";
     } catch (error) {
       const err = error as AxiosError;
+      console.log("errorAxios: ", err.code);
+      console.log("err: ", error);
       if (err) {
         console.error("❌ Submission error:", err.message);
         if (err.code === "429") {
@@ -67,6 +69,7 @@ const RequestACallBackForm = (props: Props) => {
         console.error("❌ Submission error:", error);
       }
       setError("Something went wrong. Please try again.");
+      setSuccess(null);
     } finally {
       setIsLoading(false);
     }
