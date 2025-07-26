@@ -52,10 +52,6 @@ const RequestACallBackForm = (props: Props) => {
       emailRef.current!.value = "";
       phoneRef.current!.value = "";
       messageRef.current!.value = "";
-
-      setTimeout(() => {
-        setSuccess(null);
-      }, 2000);
     } catch (error) {
       const err = error as AxiosError;
       if (err) {
@@ -73,6 +69,10 @@ const RequestACallBackForm = (props: Props) => {
       }
       setSuccess(null);
     } finally {
+      setTimeout(() => {
+        setSuccess(null);
+        setError(null);
+      }, 2000);
       setIsLoading(false);
     }
   };
