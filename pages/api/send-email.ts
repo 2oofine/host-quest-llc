@@ -6,6 +6,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const ip = req.headers["x-forwarded-for"]?.toString().split(",")[0] || req.socket.remoteAddress;
 
   const allowed = await limitByIp(ip!, "contact", 3, 60); // 3 requests per 60s
+
+  console.log(allowed, "Allowed status for IP:", ip);
   if (!allowed) return res.status(429).json({ message: "Too many requests, please try again later." });
 
   if (req.method !== "POST") {
