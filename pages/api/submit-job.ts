@@ -13,6 +13,7 @@ export const config = {
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") return res.status(405).end("Method Not Allowed");
   const jobId = req.body.jobId;
+  console.log("request body", req.body);
   const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress || "unknown";
   const ipStr = Array.isArray(ip) ? ip[0] : ip;
 
