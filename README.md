@@ -8,7 +8,7 @@ This is the official website for **Host Quest LLC**, designed to be modern, scal
 - **Backend & Database:** Firebase
 - **Styling:** Tailwind CSS
 - **Hosting & Deployment:** Vercel
-
+- **CI/CD:** Github Actions
 ## 🚀 Features
 
 ✅ Fully responsive design  
