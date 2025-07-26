@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import React, { useRef, useState } from "react";
 interface Props {
   isFromContactUs?: boolean;
@@ -13,6 +13,7 @@ const RequestACallBackForm = (props: Props) => {
   const messageRef = useRef<HTMLTextAreaElement>(null);
 
   const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
   const [emptyFields, setEmptyFields] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -44,20 +45,26 @@ const RequestACallBackForm = (props: Props) => {
       const response = await axios.post("/api/send-email", formData);
 
       console.log("✅ Email sent:", response.data.message);
-      // setSuccess("Message sent successfully!");
+      setSuccess("Message sent successfully!");
 
       // Clear form
       fullNameRef.current!.value = "";
       emailRef.current!.value = "";
       phoneRef.current!.value = "";
       messageRef.current!.value = "";
-    } catch (error: unknown) {
-      if (axios.isAxiosError(error)) {
-        console.error("❌ Failed to send:", error.response?.data?.message || error.message);
+    } catch (error) {
+      const err = error as AxiosError;
+      if (err) {
+        console.error("❌ Submission error:", err.message);
+        if (err.code === "429") {
+          setError("Too many requests. Please try again later.");
+        } else {
+          setError("Failed to submit. Please try again.");
+        }
       } else if (error instanceof Error) {
-        console.error("❌ Failed to send:", error.message);
+        console.error("❌ Submission error:", error.message);
       } else {
-        console.error("❌ Failed to send:", error);
+        console.error("❌ Submission error:", error);
       }
       setError("Something went wrong. Please try again.");
     } finally {
@@ -121,6 +128,7 @@ const RequestACallBackForm = (props: Props) => {
             {isLoading ? "Sending..." : isFromContactUs ? "Send Now" : "Send Request"}
           </button>
           {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
+          {success && <div className="text-green-500 text-sm mt-2">{success}</div>}
         </div>
       </form>
     </>
