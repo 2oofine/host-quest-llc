@@ -58,7 +58,7 @@ const RequestACallBackForm = (props: Props) => {
       console.log("err: ", error);
       if (err) {
         console.error("❌ Submission error:", err.message);
-        if (err.code === "429") {
+        if (err.status === 429) {
           setError("Too many requests. Please try again later.");
         } else {
           setError("Failed to submit. Please try again.");
@@ -67,8 +67,8 @@ const RequestACallBackForm = (props: Props) => {
         console.error("❌ Submission error:", error.message);
       } else {
         console.error("❌ Submission error:", error);
+        setError("Something went wrong. Please try again.");
       }
-      setError("Something went wrong. Please try again.");
       setSuccess(null);
     } finally {
       setIsLoading(false);

@@ -30,7 +30,7 @@ const JobPostings = () => {
   const [selectedJob, setSelectedJob] = useState<(typeof jobs)[number] | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
   const [error, setError] = useState<string | null>(null);
-  const [success, setSucess] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
   // Detect client side render
   useEffect(() => {
     setIsClient(true);
@@ -119,13 +119,13 @@ const JobPostings = () => {
 
       // console.log("✅ Submission successful:", response.data.message);
       // alert("Application submitted!");
-      setSucess("Application submitted successfully!");
+      setSuccess("Application submitted successfully!");
       setIsModalOpen(false);
     } catch (error) {
       const err = error as AxiosError;
       if (err) {
         console.error("❌ Submission error:", err.message);
-        if (err.code === "429") {
+        if (err.status === 429) {
           setError("Too many requests. Please try again later.");
         } else {
           setError("Failed to submit. Please try again.");
@@ -134,9 +134,9 @@ const JobPostings = () => {
         console.error("❌ Submission error:", error.message);
       } else {
         console.error("❌ Submission error:", error);
+        setError("Something went wrong. Please try again.");
       }
-      setError("Failed to submit. Please try again.");
-      setSucess(null);
+      setSuccess(null);
       console.error("❌ Submission error:", err);
     } finally {
       setIsLoading(false);
