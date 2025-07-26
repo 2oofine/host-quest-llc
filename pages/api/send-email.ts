@@ -10,7 +10,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress || "unknown";
   const ipStr = Array.isArray(ip) ? ip[0] : ip;
 
-  const allowed = await limitByIp(ipStr, "job-apply", 1, 60); // 1 request per 60s
+  const allowed = await limitByIp(ipStr, "send-email", 1, 60); // 1 request per 60s
   if (!allowed) {
     return res.status(429).json({ message: "Too many requests. Try again in a minute." });
   }

@@ -54,8 +54,6 @@ const RequestACallBackForm = (props: Props) => {
       messageRef.current!.value = "";
     } catch (error) {
       const err = error as AxiosError;
-      console.log("errorAxios: ", err.code);
-      console.log("err: ", error);
       if (err) {
         console.error("❌ Submission error:", err.message);
         if (err.status === 429) {
