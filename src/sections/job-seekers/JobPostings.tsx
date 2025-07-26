@@ -140,7 +140,11 @@ const JobPostings = () => {
       setSuccess(null);
       console.error("❌ Submission error:", err);
     } finally {
-      setError(null);
+      setTimeout(() => {
+        setSuccess(null);
+        setError(null);
+      }, 2000);
+      // Reset form
       setIsLoading(false);
     }
   };
