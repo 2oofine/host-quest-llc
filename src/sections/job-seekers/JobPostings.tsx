@@ -1,7 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { fetchUSCountryStates } from "../../../pages/api/country-state";
 import { jobs } from "@/constants/jobs";
 import { OptionType } from "@/types";
 import { CountryData, State } from "@/types/countryState";
@@ -11,6 +9,7 @@ import axios, { AxiosError } from "axios";
 import { ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import ReactSelect from "react-select";
+import { fetchUSCountryStates } from "../../../pages/api/country-state";
 
 interface SearchState {
   states?: State[];
@@ -30,7 +29,7 @@ const JobPostings = () => {
   const [selectedJob, setSelectedJob] = useState<(typeof jobs)[number] | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
   const [error, setError] = useState<string | null>(null);
-  const [success, setSucess] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
   // Detect client side render
   useEffect(() => {
     setIsClient(true);
@@ -112,6 +111,7 @@ const JobPostings = () => {
     try {
       const formData = new FormData(formRef.current!);
       formData.append("position", selectedJob?.title ?? "");
+      formData.append("id", String(selectedJob?.id) ?? "");
 
       await axios.post("/api/submit-job", formData, {
         headers: { "Content-Type": "multipart/form-data" },
@@ -119,13 +119,14 @@ const JobPostings = () => {
 
       // console.log("✅ Submission successful:", response.data.message);
       // alert("Application submitted!");
-      setSucess("Application submitted successfully!");
+      setSuccess("Application submitted successfully!");
       setIsModalOpen(false);
+      setSuccess(null);
+      setError(null);
     } catch (error) {
       const err = error as AxiosError;
       if (err) {
-        console.error("❌ Submission error:", err.message);
-        if (err.code === "429") {
+        if (err.status === 429) {
           setError("Too many requests. Please try again later.");
         } else {
           setError("Failed to submit. Please try again.");
@@ -134,10 +135,16 @@ const JobPostings = () => {
         console.error("❌ Submission error:", error.message);
       } else {
         console.error("❌ Submission error:", error);
+        setError("Something went wrong. Please try again.");
       }
-      setError("Failed to submit. Please try again.");
+      setSuccess(null);
       console.error("❌ Submission error:", err);
     } finally {
+      setTimeout(() => {
+        setSuccess(null);
+        setError(null);
+      }, 2000);
+      // Reset form
       setIsLoading(false);
     }
   };
