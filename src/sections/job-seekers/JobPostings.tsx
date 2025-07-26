@@ -140,6 +140,7 @@ const JobPostings = () => {
       setSuccess(null);
       console.error("❌ Submission error:", err);
     } finally {
+      setError(null);
       setIsLoading(false);
     }
   };
