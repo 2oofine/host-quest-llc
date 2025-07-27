@@ -7,7 +7,7 @@ This is the official website for **Host Quest LLC**, designed to be modern, scal
 - **Frontend:** Next.js (App Router), TypeScript, Tailwind CSS
 - **Backend:** Next.js
 - **Styling:** Tailwind CSS
-- **Hosting & Deployment:** Vercel
+- **Hosting & Deployment:** Vercel with Upstash
 - **CI/CD:** Github Actions
 ## 🚀 Features
 
