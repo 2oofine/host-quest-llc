@@ -76,6 +76,7 @@ const RequestACallBackForm = (props: Props) => {
       setIsLoading(false);
     }
   };
+
   return (
     <>
       {/* Form */}
@@ -104,9 +105,15 @@ const RequestACallBackForm = (props: Props) => {
           />
           <input
             type="tel"
+            pattern="[0-9]*"
+            inputMode="numeric"
             aria-label="Phone Number"
             ref={phoneRef}
             placeholder="Phone Number (Optional)"
+            onInput={(e) => {
+              const input = e.target as HTMLInputElement;
+              input.value = input.value.replace(/[^0-9+\-() ]/g, "");
+            }}
             className={`max-w-full ${
               isFromContactUs ? "w-full" : "w-[555px]"
             } h-[60px] p-[18px] bg-white text-black placeholder-silver font-light`}
