@@ -2,7 +2,7 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const baseUrl = "https://hostquestllc.com"; // Change to your actual domain
+  const baseUrl = "https://hostquestllc.com";
 
   const staticPages = [
     "", // homepage
