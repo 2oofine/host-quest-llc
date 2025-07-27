@@ -6,9 +6,11 @@ import Facebook from "../../public/icons/home/facebook.svg";
 import Instagram from "../../public/icons/home/instagram.svg";
 import WhatsApp from "../../public/icons/home/whatsapp.svg";
 import LinkedIn from "../../public/icons/home/linkedin.svg";
+import { CompanyInfo } from "@/constants/company-info";
 
 const Footer = () => {
   const year = new Date().getFullYear();
+  const { email, name, whatsApp, address } = CompanyInfo;
   return (
     <footer className="text-secondary-light bg-primary-dark">
       <div className="container mx-auto pt-16 pb-12 px-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-24 ">
@@ -88,17 +90,19 @@ const Footer = () => {
 
           <ul className="footer-text mt-[15px] space-y-3 text-secondary-light">
             <li>
-              <span className="font-semibold text-primary-light">Name: </span> Nader Assad
+              <span className="font-semibold text-primary-light">Name: </span> {name}
             </li>
             <li>
-              <span className="font-semibold text-primary-light">WhatsApp: </span>+1 714 326 4146
+              <span className="font-semibold text-primary-light">WhatsApp: </span>
+              {whatsApp}
             </li>
             <li>
               <span className="font-semibold text-primary-light">Email: </span>
-              <a href="mailto:info@hostquestllc.com">nader.adel92@gmail.com</a>
+              <a href="mailto:info@hostquestllc.com">{email}</a>
             </li>
             <li>
-              <span className="font-semibold text-primary-light">Address: </span>310 Jefferson St, Placentia, CA 92870
+              <span className="font-semibold text-primary-light">Address: </span>
+              {address}
             </li>
           </ul>
         </div>

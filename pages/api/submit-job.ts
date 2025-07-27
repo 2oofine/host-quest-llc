@@ -17,7 +17,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   form.parse(req, async (err, fields, files) => {
     const { fullName, email, position, id } = fields;
-    console.log("request body", req.body);
+
     const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress || "unknown";
     const ipStr = Array.isArray(ip) ? ip[0] : ip;
 
@@ -47,9 +47,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           pass: process.env.SMTP_PASS,
         },
       });
+
       await transporter.sendMail({
-        from: `"Job Application" <${process.env.SMTP_USER}>`,
-        to: process.env.RECEIVER_EMAIL,
+        from: `"Job Application" <${process.env.CAREERS_EMAIL_ALIAS}>`,
+        to: process.env.CAREERS_EMAIL_ALIAS,
         subject: `📩 Job Application: ${position} - ${fullName}`,
         html: `
           <div style="font-family: Arial, sans-serif; color: #333; padding: 20px; max-width: 600px; margin: auto; border: 1px solid #eee; border-radius: 8px;">

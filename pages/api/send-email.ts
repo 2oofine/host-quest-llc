@@ -33,8 +33,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     });
 
     await transporter.sendMail({
-      from: `"Contact Form" <${process.env.SMTP_USER}>`,
-      to: process.env.RECEIVER_EMAIL,
+      from: `"Contact Form" <${process.env.CONTACT_US_EMAIL_ALIAS}>`,
+      to: process.env.CONTACT_US_EMAIL_ALIAS,
       replyTo: email,
       subject: "📬 New Contact Form Submission",
       html: `
