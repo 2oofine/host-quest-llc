@@ -131,7 +131,7 @@ const WhatSetsUsApart = (props: Props) => {
                   viewport={{ once: true }}
                   className="w-full"
                 >
-                  <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0 }}>
+                  <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
                     <LongCard icon={card.icon} iconName={card.iconName} text={card.text} height={86} light={light} />
                   </motion.div>
                 </motion.li>

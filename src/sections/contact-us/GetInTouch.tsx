@@ -13,16 +13,6 @@ import RequestACallBackForm from "@/components/RequestACallBackForm";
 import { motion } from "framer-motion";
 
 const GetInTouch = () => {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     show: {
@@ -41,10 +31,12 @@ const GetInTouch = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           {/* Left Side */}
           <motion.div
-            initial="hidden"
-            whileInView="show"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{
+              staggerChildren: 0.2,
+            }}
             viewport={{ once: true }}
-            variants={container}
             className="flex flex-col"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-primary-dark">

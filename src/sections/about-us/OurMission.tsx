@@ -56,7 +56,7 @@ const OurMission = () => {
                 >
                   <motion.div
                     whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)" }}
-                    transition={{ duration: 0 }}
+                    transition={{ duration: 0.2 }}
                   >
                     <SimpleCard item={item} height="370" light={false} />
                   </motion.div>
