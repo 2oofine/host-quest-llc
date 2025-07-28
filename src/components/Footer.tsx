@@ -49,7 +49,7 @@ const Footer = () => {
                   <Link href={"/services"}>Services</Link>
                 </li>
                 <li>
-                  <Link href={"/about"}>About Us</Link>
+                  <Link href={"/about-us"}>About Us</Link>
                 </li>
               </div>
               <div className="space-y-3">
@@ -66,25 +66,6 @@ const Footer = () => {
             </ul>
           </nav>
         </div>
-        {/* <div>
-          <p className="footer-text font-semibold">Social Media</p>
-          <nav>
-            <ul className="footer-text mt-[15px] space-y-3">
-              <li>
-                <Link href={"/"}>Facebook</Link>
-              </li>
-              <li>
-                <Link href={"/services"}>Instagram</Link>
-              </li>
-              <li>
-                <Link href={"/about"}>Twitter</Link>
-              </li>
-              <li>
-                <Link href={"/job-seekers"}>LinkedIn</Link>
-              </li>
-            </ul>
-          </nav>
-        </div> */}
         <div>
           <p className="footer-text font-semibold text-primary-light">Office Information</p>
 
