@@ -37,31 +37,6 @@ const WhyBusinessesTrustHQL = () => {
   return (
     <section className="relative overflow-hidden bg-secondary-light">
       <div className="container mx-auto mt-[50px] w-full  relative overflow-hidden z-10">
-        {/* Background Elements */}
-        {/* <div className="2xl:container mx-auto absolute inset-0 -z-10">
-         
-          <motion.img
-            src={"/icons/home/arch5.svg"}
-            alt="Arch"
-            initial={{ opacity: 0 }}
-            // animate={isInView ? { opacity: 1 } : {}}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="block absolute left-[7.3%] lg:bottom-[53%] bottom-[82.5%] -translate-x-1/2 translate-y-1/3"
-          />
-          <motion.img
-            src={"/icons/home/arch6.svg"}
-            alt="Arch"
-            initial={{ opacity: 0 }}
-            // animate={isInView ? { opacity: 1 } : {}}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-            className="block absolute right-[7.3%] lg:top-[53%] top-[82.5%] translate-x-1/2 -translate-y-1/3"
-          />
-        </div> */}
-
         <div className="mx-10 pt-[46px] pb-[101px]">
           {/* Heading Animation */}
           <div className="text-center mx-5 text-primary-dark">
@@ -90,7 +65,6 @@ const WhyBusinessesTrustHQL = () => {
           {/* Cards Grid Animation */}
           <motion.ul
             initial={{ opacity: 0, y: 40 }}
-            // animate={isInView ? { opacity: 1, y: 0 } : {}}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", staggerChildren: 0.2 }}
             viewport={{ once: true }}
@@ -100,7 +74,6 @@ const WhyBusinessesTrustHQL = () => {
               <motion.li
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
-                // animate={isInView ? { opacity: 1, y: 0 } : {}}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 viewport={{ once: true }}
@@ -109,7 +82,7 @@ const WhyBusinessesTrustHQL = () => {
               >
                 <motion.div
                   whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)" }}
-                  transition={{ duration: 0 }}
+                  transition={{ duration: 0.2 }}
                 >
                   <Card {...card} />
                 </motion.div>
