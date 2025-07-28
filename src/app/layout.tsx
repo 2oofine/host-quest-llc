@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "HostQuest LLC | Job Application Portal",
     description: "Apply to jobs at HostQuest LLC through our easy-to-use portal.",
-    url: "https://hostquestllc.com", // Replace with your real domain
+    url: "https://hostquestllc.com",
     siteName: "HostQuest LLC",
     type: "website",
     locale: "en_US",
