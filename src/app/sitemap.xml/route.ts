@@ -5,7 +5,7 @@ export async function GET() {
   const baseUrl = "https://hostquestllc.com";
 
   const staticPages = [
-    "", // homepage
+    "/", // homepage
     "/about-us",
     "/contact-us",
     "/employers",
