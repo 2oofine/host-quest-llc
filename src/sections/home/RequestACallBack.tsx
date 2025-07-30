@@ -5,7 +5,7 @@ import RequestACallBackForm from "@/components/RequestACallBackForm";
 
 const RequestACallBack = () => {
   return (
-    <section className="relative overflow-hidden w-full min-h-screen lg:h-screen mt-32">
+    <section className="relative overflow-hidden w-full min-h-screen mt-32 pb-32">
       <Image src={RACB} alt="Hero Banner" style={{ objectFit: "cover", objectPosition: "top" }} fill priority />
 
       <div className="absolute inset-0 bg-primary-dark/50 z-10" />
