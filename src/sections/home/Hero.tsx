@@ -11,7 +11,7 @@ const Hero = () => {
 
       <div className="absolute inset-0 bg-charcoalNavy/60 z-10" />
 
-      <div className="px-5 md:px-0 container absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center xl:text-left w-full text-white z-20">
+      <div className="px-5 lg:px-10 container absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center xl:text-left w-full text-white z-20">
         {/* Title */}
         <div className="mt-28 md:mt-0 md:space-y-3 animate-fade-in">
           <h1 className="text-3xl md:text-5xl font-semibold">Host Quest LLC Bringing</h1>
