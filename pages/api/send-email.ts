@@ -32,6 +32,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       },
     });
 
+    console.log("Sending email to:", process.env.CONTACT_US_EMAIL_ALIAS);
+    console.log("Sending email to:", process.env.SMTP_USER);
+    console.log("Sending email to:", process.env.SMTP_PASS);
+
     await transporter.sendMail({
       from: `"Contact Form" <${process.env.CONTACT_US_EMAIL_ALIAS}>`,
       to: process.env.CONTACT_US_EMAIL_ALIAS,
