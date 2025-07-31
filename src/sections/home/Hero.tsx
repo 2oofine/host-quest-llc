@@ -3,8 +3,10 @@ import Image from "next/image";
 import React from "react";
 import HeroBanner from "../../../public/images/home/home-hero-banner.jpg";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 const Hero = () => {
+  const router = useRouter();
   return (
     <section className="relative w-full h-screen">
       <Image src={HeroBanner} alt="Hero Banner" style={{ objectFit: "cover", objectPosition: "top" }} fill priority />
@@ -33,6 +35,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
             className="hover:bg-[#78B0B2] hover:text-white btn-primary-42 bg-aeroBlue w-[210px] text-charcoalNavy font-semibold"
+            onClick={() => router.push("/job-seekers")}
           >
             Job Seekers
           </motion.button>
@@ -40,6 +43,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+            onClick={() => router.push("/employers")}
             className="hover:bg-aeroBlue hover:border-transparent hover:text-charcoalNavy btn-primary-42 w-[210px] border border-white font-semibold"
           >
             Employers

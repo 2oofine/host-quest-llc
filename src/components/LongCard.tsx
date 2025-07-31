@@ -13,7 +13,7 @@ type LongCardProps = {
 };
 
 const LongCard = (props: LongCardProps) => {
-  const { icon, iconName, href = "/", text, height = 80, light = false } = props;
+  const { icon, iconName, href = "", text, height = 80, light = false } = props;
   return (
     <div
       className={`max-w-full lg:w-[555px] h-auto flex items-center gap-x-5 ${
