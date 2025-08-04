@@ -9,6 +9,7 @@ This is the official website for **Host Quest LLC**, designed to be modern, scal
 - **Styling:** Tailwind CSS
 - **Hosting & Deployment:** Vercel with Upstash
 - **CI/CD:** Github Actions
+- **Testing:** Jest & React Testing Library
 ## 🚀 Features
 
 ✅ Fully responsive design  
