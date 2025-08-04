@@ -22,6 +22,7 @@ const Footer = () => {
             To Connect Top Talent With the Right Opportunities, Empowering Businesses And Job Seekers For Long-Term
             Success.
           </div>
+          {/* TODO: Update social media links */}
           <div className="flex items-center gap-3 mt-4">
             <Link href="/">
               <Image src={Facebook} alt="facebook" width={30} height={30} className="w-[30px] h-[30px]" />
