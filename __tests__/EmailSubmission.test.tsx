@@ -1,12 +1,10 @@
 import RequestACallBackForm from "@/components/RequestACallBackForm";
 import { jobs } from "@/constants/jobs";
-import JobPostings from "@/sections/job-seekers/JobPostings";
 import JobSubmissionModal from "@/sections/job-seekers/JobSubmissionModal";
-import { Currency, Job, JobType, Periodicity, WorkSetup } from "@/types/jobs";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import axios from "axios";
-import React, { act } from "react";
+import { act } from "react";
 
 jest.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;
